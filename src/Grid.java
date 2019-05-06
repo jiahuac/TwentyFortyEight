@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class Grid
 {
     /** given maximum size of the game grid (dimensions) */
-    private static final int MAX_SIZE = 3;
+    private int size;
 
     /** myGrid object, consisting of 3d Tile object array */
     private Tile[][][] myGrid;
@@ -29,12 +29,13 @@ public class Grid
     /** default constructor constructs a grid of MAX_SIZE */
     public Grid()
     {
-        this(MAX_SIZE);
+        this(3);
     }
 
     /** constructs a grid of dimensions/side length size, with all empty tiles */
-    public Grid(int size)
+    public Grid(int dim)
     {
+        size = dim;
         myGrid = new Tile[size][size][size];
         for (int stack = 0; stack < myGrid.length; stack++)
         {
@@ -189,7 +190,9 @@ public class Grid
         {
             tile1 = tile2;
             tile2 = tile1.add(dir);
-            score += tryCombine(tile1,tile2);
+            int addScore = tryCombine(tile1, tile2);
+            if (addScore != 0)
+            { score += Math.pow(2, addScore); }
         }
         return score;
     }
@@ -228,7 +231,7 @@ public class Grid
             {
                 for (int col = startCol; col < maxCol; col++)
                 {
-                    ret += combineStack(new Loc(stack, row, col), dir, 2);
+                    ret += combineStack(new Loc(stack, row, col), dir, size - 1);
                 }
             }
         }
@@ -268,7 +271,6 @@ public class Grid
             }
         }
     }
-
     
     public void shift(Loc dir)
     {
@@ -302,7 +304,7 @@ public class Grid
             {
                 for (int col = startCol; col < maxCol; col++)
                 {
-                    shiftStack(new Loc(stack, row, col), dir, MAX_SIZE - 1);
+                    shiftStack(new Loc(stack, row, col), dir, size - 1);
                 }
             }
         }
