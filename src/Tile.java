@@ -21,9 +21,13 @@ public class Tile
 
     /** power of empty tile */
     private static final int EMPTY_POWER = 0;
-    
+
     /** move state of a tile */
     private boolean moved;
+
+    private static BufferedImage[] myTilesImage;
+
+    private static boolean imagesLoaded = false;
 
     /** default constructor */
     public Tile()
@@ -42,7 +46,24 @@ public class Tile
     {
         this.power = pow;
         this.loc = loc;
-        this.moved = false; 
+        this.moved = false;
+        if (!imagesLoaded)
+        {
+            myTilesImage = new BufferedImage[14];
+            for (int i = 0; i < myTilesImage.length; i++)
+            {
+                try
+                {
+                    InputStream is = getClass().getResourceAsStream("/tileimages/" + i + ".jpg");
+                    myTilesImage[i] = ImageIO.read(is);
+                }
+                catch(IOException ioe)
+                {
+                    System.out.println("InputStream ERROR");
+                }
+            }
+            imagesLoaded = true;
+        }
     }
 
     /**
@@ -126,20 +147,20 @@ public class Tile
         }
         else { return 0; }
     }
-    
+
     public boolean canMove()
     {
-        return !this.moved; 
+        return !this.moved;
     }
-    
+
     public void moved()
     {
-        this.moved = true; 
+        this.moved = true;
     }
-    
+
     public void resetMoved()
     {
-        this.moved = false; 
+        this.moved = false;
     }
 
     public void drawMe(Graphics2D g)
@@ -147,56 +168,6 @@ public class Tile
         g.setFont(new Font("Dialog", Font.BOLD, 20));
         int xVal = 100 + this.loc.stack * 200 + this.loc.col * 60;
         int yVal = 100 + this.loc.row * 60;
-        g.drawString(this.toString(), xVal, yVal);
-    }
-
-    public static void main(String[] args)
-    {
-        // Creates a new, empty Tile object
-        Tile tile1 = new Tile();
-
-        System.out.print("tile1: ");
-        // Prints the empty tile object, checking the toString method (when empty)
-        // We expect the empty output "-" here
-        System.out.println(tile1);
-
-        System.out.print("tile1 isEmpty: ");
-        // Checks if tile1 is empty, checking the isEmpty method
-        // Expected return true
-        System.out.println(tile1.isEmpty());
-
-        System.out.print("tile1 setPower(3): ");
-        // Using the setPower method, sets the power of tile1 to 3
-        // then prints the output, expected true as it was successful
-        System.out.println(tile1.setPower(3));
-
-        System.out.print("tile1 setPower(3) - second time: ");
-        // When we set the power to 3 again, as it is already 3, expected false
-        System.out.println(tile1.setPower(3));
-
-        System.out.print("tile1 toString: ");
-        // Prints tile1 again, we expect the toString method to return 2^3=8
-        System.out.println(tile1);
-
-        System.out.print("tile1 getPower: ");
-        // Prints the *power* of tile1, which should return 3
-        System.out.println(tile1.getPower());
-
-        // Creates a new, empty Tile, tile2
-        Tile tile2 = new Tile();
-
-        System.out.print("tile2: ");
-        // Prints tile2, we expect it to be empty
-        System.out.println(tile2);
-
-        System.out.print("tile2 initiate: ");
-        // Initiates tile2, which initiates tile2 with a random power 1 or 2
-        // the function should return the power of tile2
-        System.out.println(tile2.initiate());
-
-        System.out.print("tile2 toString: ");
-        // Now we expect tile2 to equal 2^p, where p was the random power above
-        System.out.println(tile2);
-
+        g.drawImage(myTilesImage[this.getPower()], xVal, yVal, 50, 50, null);
     }
 }
