@@ -8,7 +8,7 @@ import javax.imageio.*;
  * Tile class for 3D-2048 game
  * Individual Tile objects for the game grid
  * @author Jiahua Chen
- * @version 0.02 04.02.2019
+ * @version alph-1.0 05.05.2019
  */
 
 public class Tile

@@ -7,7 +7,7 @@ import java.awt.event.*;
  * GameApp class for 3D-2048 game
  * Runs the app for 2048 game
  * @author Jiahua Chen
- * @version 0.02 04.18.2019 Milestone 2
+ * @version alph-1.0 05.05.2019
  */
 public class GameApp {
 

@@ -8,7 +8,7 @@ import java.awt.event.*;
  * Instructions Screen class for 3D-2048 game
  * Instructions Screen for 2048 game
  * @author Jiahua Chen
- * @version alph-0.5 04.18.2019 Milestone 2
+ * @version alph-1.0 05.05.2019
  */
 public class InstructionScreen extends JPanel
 {
@@ -19,17 +19,24 @@ public class InstructionScreen extends JPanel
 
     private Rectangle2D.Double myGameButton;
 
+    private Grid myGrid;
+
     public InstructionScreen(GameApp app)
     {
         myApp = app;
-        addMouseListener(new MyButtonListener());
+        myGrid = new Grid(2);
+        this.addMouseListener(new MyButtonListener());
+        this.addKeyListener(new GameKeyHandler(myGrid, this));
+        this.setFocusable(true);
+        this.requestFocusInWindow();
     }
 
     public void paintComponent(Graphics g)
     {
         Graphics2D g2 = (Graphics2D) g;
 
-        g2.drawString("Instructions will be implemented soon! Basically use W, A, S, D, Q, and E to shift. ", 50, 50);
+        g2.drawString("(Full instructions will be implemented soon!) Basically use W, A, S, D, Q, and E to shift. ", 50, 50);
+        g2.drawString("Here is a miniature version of the game for you to try out: ", 50, 70);
 
         setBackground(Color.WHITE);
 
@@ -40,7 +47,11 @@ public class InstructionScreen extends JPanel
                 BUTTON_WIDTH, BUTTON_HEIGHT);
         g2.draw(myGameButton);
         g2.setFont(new Font("Arial", Font.BOLD, 18));
-        g2.drawString("Play!", buttonX + 78, buttonY + 30);
+        g2.drawString("Play the real game!", buttonX + 20, buttonY + 30);
+        for (Tile t : myGrid.getTiles())
+        {
+            t.drawMe(g2);
+        }
     }
 
     private class MyButtonListener implements MouseListener
