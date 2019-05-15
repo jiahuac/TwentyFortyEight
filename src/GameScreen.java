@@ -32,4 +32,22 @@ public class GameScreen extends JPanel
         }
         g2.drawString("Score: " + Integer.toString(myGrid.getScore()), 50, 50);
     }
+
+    private class FieldUpdater extends Thread {
+        public void run()
+        {
+            while (true)
+            {
+                repaint();
+                try
+                {
+                    sleep(1);
+                }
+                catch (InterruptedException ie)
+                {
+
+                }
+            }
+        }
+    }
 }

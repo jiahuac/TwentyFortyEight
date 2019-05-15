@@ -165,9 +165,13 @@ public class Tile
 
     public void drawMe(Graphics2D g)
     {
-        g.setFont(new Font("Dialog", Font.BOLD, 20));
         int xVal = 100 + this.loc.stack * 200 + this.loc.col * 60;
         int yVal = 100 + this.loc.row * 60;
-        g.drawImage(myTilesImage[this.getPower()], xVal, yVal, 50, 50, null);
+        this.drawTile(g, xVal, yVal);
+    }
+
+    public void drawTile(Graphics2D g, int x, int y)
+    {
+        g.drawImage(myTilesImage[this.getPower()], x, y, 50, 50, null);
     }
 }
