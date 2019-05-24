@@ -26,11 +26,11 @@ public class InstructionScreen extends JPanel
         myApp = app;
         myGrid = new Grid(2);
         this.addMouseListener(new MyButtonListener());
+        FieldUpdater up = new FieldUpdater();
         this.addKeyListener(new GameKeyHandler(myGrid, this));
         this.setFocusable(true);
         this.requestFocusInWindow();
 
-        FieldUpdater up = new FieldUpdater();
         up.start();
     }
 
