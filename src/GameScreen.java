@@ -2,6 +2,7 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.event.*;
 import java.awt.event.*;
+import java.awt.geom.Rectangle2D;
 
 /**
  * GameScreen class for 3D-2048 game
@@ -12,14 +13,20 @@ import java.awt.event.*;
 
 public class GameScreen extends JPanel
 {
+
+    private GameApp myApp;
     private Grid myGrid;
 
-    public GameScreen(Grid grid)
+    private Rectangle2D.Double myGameButton;
+
+    public GameScreen(Grid grid, GameApp app)
     {
         myGrid = grid;
+        myApp = app;
         this.addKeyListener(new GameKeyHandler(myGrid, this));
         this.setFocusable(true);
         this.requestFocusInWindow();
+        addMouseListener(new MyButtonListener());
 
         FieldUpdater up = new FieldUpdater();
         up.start();
@@ -30,6 +37,16 @@ public class GameScreen extends JPanel
 //        System.out.println("GameScreen paintComponent called");
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
+
+        int buttonX = 600;
+        int buttonY = 30;
+
+        myGameButton = new Rectangle2D.Double(buttonX, buttonY,
+                70, 30);
+        g2.draw(myGameButton);
+        g2.setFont(new Font("Arial", Font.PLAIN, 18));
+        g2.drawString("Pause", buttonX + 10, buttonY + 23);
+
         myGrid.drawEmpty(g2);
         for (Tile t : myGrid.getTiles())
         {
@@ -53,6 +70,40 @@ public class GameScreen extends JPanel
 
                 }
             }
+        }
+    }
+
+    private class MyButtonListener implements MouseListener
+    {
+        public void mousePressed(MouseEvent e)
+        {
+            int mouseX = e.getX();
+            int mouseY = e.getY();
+
+            if (myGameButton.contains(mouseX, mouseY))
+            {
+                myApp.loadPauseScreen();
+            }
+        }
+
+        public void mouseReleased(MouseEvent e)
+        {
+
+        }
+
+        public void mouseClicked(MouseEvent e)
+        {
+
+        }
+
+        public void mouseEntered(MouseEvent e)
+        {
+
+        }
+
+        public void mouseExited(MouseEvent e)
+        {
+
         }
     }
 }
