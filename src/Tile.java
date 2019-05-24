@@ -18,6 +18,12 @@ public class Tile
 
     /** location of the individual tile, using a Loc object*/
     private Loc loc;
+    private Loc newLoc;
+
+    private int animationSequence;
+
+    private int drawStep;
+    private int step;
 
     /** power of empty tile */
     private static final int EMPTY_POWER = 0;
@@ -25,7 +31,7 @@ public class Tile
     /** move state of a tile */
     private boolean moved;
 
-    private static BufferedImage[] myTilesImage;
+    public static BufferedImage[] myTilesImage;
 
     private static boolean imagesLoaded = false;
 
@@ -45,7 +51,7 @@ public class Tile
     public Tile(int pow, Loc loc)
     {
         this.power = pow;
-        this.loc = loc;
+        this.setLoc(loc);
         this.moved = false;
         if (!imagesLoaded)
         {
@@ -55,7 +61,7 @@ public class Tile
                 try
                 {
                     InputStream is = getClass().getResourceAsStream("/tileimages/" + i + ".jpg");
-                    myTilesImage[i] = ImageIO.read(is);
+                    myTilesImage[i] = makeRoundedCorner(ImageIO.read(is),16);
                 }
                 catch(IOException ioe)
                 {
@@ -102,6 +108,12 @@ public class Tile
     public void setLoc(Loc newLoc)
     {
         this.loc = newLoc;
+        this.newLoc = newLoc;
+    }
+
+    public void setNewLoc(Loc newLoc)
+    {
+        this.newLoc = newLoc;
     }
 
     /**
@@ -165,13 +177,92 @@ public class Tile
 
     public void drawMe(Graphics2D g)
     {
-        int xVal = 100 + this.loc.stack * 200 + this.loc.col * 60;
-        int yVal = 100 + this.loc.row * 60;
-        this.drawTile(g, xVal, yVal);
+        int xVal, yVal;
+        if (isEmpty())
+        {
+            setLoc(newLoc);
+            xVal = getXCoord(loc);
+            yVal = getYCoord(loc);
+        }
+        else
+        {
+            xVal = getXCoord(loc) + (drawStep * (getXCoord(newLoc) - getXCoord(loc))) / 60;
+            yVal = getYCoord(loc) + (drawStep * (getYCoord(newLoc) - getYCoord(loc))) / 60;
+            if (!loc.equals(newLoc))
+            {
+                drawStep++;
+                int adjStep = drawStep % 60;
+                if (drawStep != adjStep)
+                {
+                    drawStep = adjStep;
+                    setLoc(newLoc);
+                }
+//                System.out.println(xVal + " " + yVal);
+            }
+        }
+        drawTile(g, xVal, yVal);
+    }
+
+    public static int getYCoord(Loc l)
+    {
+        return 100 + l.row * 60;
+    }
+
+    public static int getXCoord(Loc l)
+    {
+        return 100 + l.stack * 200 + l.col * 60;
     }
 
     public void drawTile(Graphics2D g, int x, int y)
     {
-        g.drawImage(myTilesImage[this.getPower()], x, y, 50, 50, null);
+        if (!isEmpty())
+        {
+            g.drawImage(myTilesImage[this.getPower()], x, y, 50, 50, null);
+        }
     }
+
+    public void incAnimationSeq()
+    {
+        animationSequence++;
+    }
+
+    public void resetAnimationSeq()
+    {
+        animationSequence = 0;
+    }
+
+
+    /*
+        Code to create BufferedImage with rounded corners found at
+        https://stackoverflow.com/questions/7603400/how-to-make-a-rounded-corner-image-in-java
+     */
+    public static BufferedImage makeRoundedCorner(BufferedImage image, int cornerRadius) {
+        int w = image.getWidth();
+        int h = image.getHeight();
+        BufferedImage output = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
+
+        Graphics2D g2 = output.createGraphics();
+
+        // This is what we want, but it only does hard-clipping, i.e. aliasing
+        // g2.setClip(new RoundRectangle2D ...)
+
+        // so instead fake soft-clipping by first drawing the desired clip shape
+        // in fully opaque white with antialiasing enabled...
+        g2.setComposite(AlphaComposite.Src);
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        g2.setColor(Color.WHITE);
+        g2.fill(new RoundRectangle2D.Float(0, 0, w, h, cornerRadius, cornerRadius));
+
+        // ... then compositing the image on top,
+        // using the white shape from above as alpha source
+        g2.setComposite(AlphaComposite.SrcAtop);
+        g2.drawImage(image, 0, 0, null);
+
+        g2.dispose();
+
+        return output;
+    }
+    /*
+        End of copied code
+    */
 }

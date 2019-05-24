@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.ArrayList;
 import java.awt.event.*;
 // Scanner for temp input control
@@ -143,7 +144,7 @@ public class Grid
                 }
             }
         }
-        System.out.println(" *** getEmpty called; " + emptyLocs);
+//        System.out.println(" *** getEmpty called; " + emptyLocs);
         return emptyLocs;
     }
 
@@ -154,10 +155,10 @@ public class Grid
      */
     public boolean tryShift(Loc loc1, Loc loc2)
     {
-        System.out.println("   * tryShift [" + loc1 + "], [" + loc2 + "]");
+//        System.out.println("   * tryShift [" + loc1 + "], [" + loc2 + "]");
         if (!this.getTile(loc1).isEmpty() && this.getTile(loc2).isEmpty())
         {
-            myGrid[loc2.stack][loc2.row][loc2.col] = this.getTile(loc1);
+            myGrid[loc2.stack][loc2.row][loc2.col] = myGrid[loc1.stack][loc1.row][loc1.col];
             myGrid[loc1.stack][loc1.row][loc1.col] = new Tile();
             return true;
         }
@@ -166,7 +167,7 @@ public class Grid
     
     public int tryCombine(Loc loc1, Loc loc2)
     {
-        System.out.println("   * tryCombine [" + loc1 + "], [" + loc2 + "]");
+//        System.out.println("   * tryCombine [" + loc1 + "], [" + loc2 + "]");
         Tile t1 = this.getTile(loc1);
         Tile t2 = this.getTile(loc2);
         // Debug code:
@@ -182,7 +183,7 @@ public class Grid
 
     public int combineStack(Loc start, Loc dir, int numTimes)
     {
-        System.out.println("  ** combineStack [" + start + "], [" + dir + "], " + numTimes);
+//        System.out.println("  ** combineStack [" + start + "], [" + dir + "], " + numTimes);
         Loc tile1;
         Loc tile2 = start;
         int score = 0;
@@ -199,7 +200,7 @@ public class Grid
 
     public int combine(Loc dir)
     {
-        System.out.println(" *** combine [" + dir + "]");
+//        System.out.println(" *** combine [" + dir + "]");
         dir.invert();
         int ret = 0;
         int startStack = 0;
@@ -256,7 +257,7 @@ public class Grid
     
     public void shiftStack(Loc start, Loc dir, int numTimes)
     {
-        System.out.println("  ** shiftStack [" + start + "], [" + dir + "], " + numTimes);
+//        System.out.println("  ** shiftStack [" + start + "], [" + dir + "], " + numTimes);
         boolean cont = true;
         while (cont)
         {
@@ -274,7 +275,7 @@ public class Grid
     
     public void shift(Loc dir)
     {
-        System.out.println(" *** shift [" + dir + "]");
+//        System.out.println(" *** shift [" + dir + "]");
         int startStack = 0;
         int maxStack = myGrid.length;
         int startRow = 0;
@@ -318,7 +319,7 @@ public class Grid
             {
                 for (int col = 0; col < myGrid[0][0].length; col++)
                 {
-                    myGrid[stack][row][col].setLoc(new Loc(stack, row, col));
+                    myGrid[stack][row][col].setNewLoc(new Loc(stack, row, col));
                 }
             }
         }
@@ -326,20 +327,30 @@ public class Grid
 
     public int doMove(Loc dir)
     {
-        System.out.println(" doMove called; dir: " + dir);
+//        System.out.println(" doMove called; dir: " + dir);
         this.shift(dir);
         score += this.combine(dir);
         this.shift(dir);
         this.newTile();
-        this.resetLoc();
+//        this.resetLoc();
         return score;
     }
 
+    public void resetAnimationSequence()
+    {
+        for (int stack = 0; stack < myGrid.length; stack++)
+        {
+            for (int row = 0; row < myGrid[0].length; row++)
+            {
+                for (int col = 0; col < myGrid[0][0].length; col++)
+                {
+                    myGrid[stack][row][col].resetAnimationSeq();
+                    myGrid[stack][row][col].setNewLoc(new Loc(stack, row, col));
+                }
+            }
+        }
+    }
 
-//    public void shiftStack(Loc start, Loc dir, int numTimes)
-//    {
-//        if (shiftStackOnce())
-//    }
 
     public ArrayList<Tile> getTiles()
     {
@@ -356,6 +367,24 @@ public class Grid
         }
         return out;
     }
+
+    public void drawEmpty(Graphics2D g)
+    {
+        for (int stack = 0; stack < size; stack++)
+        {
+            for (int row = 0; row < size; row++)
+            {
+                for (int col = 0; col < size; col++)
+                {
+                    Loc loc = new Loc(stack, row, col);
+                    int x = Tile.getXCoord(loc);
+                    int y = Tile.getYCoord(loc);
+                    g.drawImage(Tile.myTilesImage[0], x, y, 50, 50, null);
+                }
+            }
+        }
+    }
+
 
     public static void main(String[] args)
     {

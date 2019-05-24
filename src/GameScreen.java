@@ -20,12 +20,22 @@ public class GameScreen extends JPanel
         this.addKeyListener(new GameKeyHandler(myGrid, this));
         this.setFocusable(true);
         this.requestFocusInWindow();
+
+        FieldUpdater up = new FieldUpdater();
+        up.start();
+    }
+
+    public void paintSequence()
+    {
+        this.myGrid.resetAnimationSequence();
     }
 
     public void paintComponent(Graphics g)
     {
+//        System.out.println("GameScreen paintComponent called");
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
+        myGrid.drawEmpty(g2);
         for (Tile t : myGrid.getTiles())
         {
             t.drawMe(g2);

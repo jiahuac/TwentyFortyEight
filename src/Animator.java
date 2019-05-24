@@ -16,14 +16,46 @@ public class Animator {
 
     private static int animationTime;
     private static int animationStep;
+    private Graphics2D myGraphics;
     private Tile myTile;
     private int xStart;
     private int yStart;
+    private int xEnd;
+    private int yEnd;
+    private int x;
+    private int y;
+    private int xInt;
+    private int yInt;
+    private static final int interval = 100;
 
-    public Animator()
+    public Animator(Graphics2D g, Tile tile, int xStart, int yStart, int xEnd, int yEnd)
     {
-        Timer t = new Timer();
+        this.myGraphics = g;
+        this.myTile = tile;
+
+        this.xStart = xStart;
+        x = this.xStart;
+        this.yStart = yStart;
+        y = this.yStart;
+        this.xEnd = xEnd;
+        this.yEnd = yEnd;
+        this.xInt = (xEnd - xStart) / (1000 / interval);
+        this.yInt = (yEnd - yStart) / (1000 / interval);
     }
 
+    public void run()
+    {
+        Timer t = new Timer();
+        t.scheduleAtFixedRate(new UpdateTask(), 0, interval);
+    }
 
+    private class UpdateTask extends TimerTask
+    {
+        public void run()
+        {
+            myTile.drawTile(myGraphics, x, y);
+            x += xInt;
+            y += yInt;
+        }
+    }
 }

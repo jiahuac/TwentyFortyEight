@@ -48,7 +48,7 @@ public class GameKeyHandler implements KeyListener
             myGrid.doMove(Move.BACKWARD);
         }
         else { }
-        myScreen.repaint();
+        ((GameScreen) myScreen).paintSequence();
         System.out.println(myGrid);
     }
 
