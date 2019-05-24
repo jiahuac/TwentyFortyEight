@@ -8,7 +8,7 @@ import javax.imageio.*;
  * Tile class for 3D-2048 game
  * Individual Tile objects for the game grid
  * @author Jiahua Chen
- * @version alph-1.0 05.05.2019
+ * @version beta-1.0 05.23.2019
  */
 
 public class Tile
@@ -220,17 +220,6 @@ public class Tile
             g.drawImage(myTilesImage[this.getPower()], x, y, 50, 50, null);
         }
     }
-
-    public void incAnimationSeq()
-    {
-        animationSequence++;
-    }
-
-    public void resetAnimationSeq()
-    {
-        animationSequence = 0;
-    }
-
 
     /*
         Code to create BufferedImage with rounded corners found at

@@ -8,7 +8,7 @@ import java.awt.event.*;
  * Instructions Screen class for 3D-2048 game
  * Instructions Screen for 2048 game
  * @author Jiahua Chen
- * @version alph-1.0 05.05.2019
+ * @version beta-1.0 05.23.2019
  */
 public class InstructionScreen extends JPanel
 {
@@ -29,6 +29,9 @@ public class InstructionScreen extends JPanel
         this.addKeyListener(new GameKeyHandler(myGrid, this));
         this.setFocusable(true);
         this.requestFocusInWindow();
+
+        FieldUpdater up = new FieldUpdater();
+        up.start();
     }
 
     public void paintComponent(Graphics g)
@@ -48,6 +51,7 @@ public class InstructionScreen extends JPanel
         g2.draw(myGameButton);
         g2.setFont(new Font("Arial", Font.BOLD, 18));
         g2.drawString("Play the real game!", buttonX + 20, buttonY + 30);
+        myGrid.drawEmpty(g2);
         for (Tile t : myGrid.getTiles())
         {
             t.drawMe(g2);
@@ -85,6 +89,24 @@ public class InstructionScreen extends JPanel
         public void mouseExited(MouseEvent e)
         {
 
+        }
+    }
+
+    private class FieldUpdater extends Thread {
+        public void run()
+        {
+            while (true)
+            {
+                repaint();
+                try
+                {
+                    sleep(1);
+                }
+                catch (InterruptedException ie)
+                {
+
+                }
+            }
         }
     }
 }

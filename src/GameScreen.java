@@ -7,7 +7,7 @@ import java.awt.event.*;
  * GameScreen class for 3D-2048 game
  * Graphics and drawing for 2048 game
  * @author Jiahua Chen
- * @version alph-1.0 05.05.2019
+ * @version beta-1.0 05.23.2019
  */
 
 public class GameScreen extends JPanel
@@ -23,11 +23,6 @@ public class GameScreen extends JPanel
 
         FieldUpdater up = new FieldUpdater();
         up.start();
-    }
-
-    public void paintSequence()
-    {
-        this.myGrid.resetAnimationSequence();
     }
 
     public void paintComponent(Graphics g)

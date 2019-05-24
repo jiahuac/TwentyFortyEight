@@ -9,7 +9,7 @@ import java.util.Scanner;
  * Grid class for 3D-2048 game
  * Basic data-structure of tile objects
  * @author Jiahua Chen
- * @version alph-1.0 05.05.2019
+ * @version beta-1.0 05.23.2019
  */
 
 public class Grid
@@ -334,21 +334,6 @@ public class Grid
         this.newTile();
 //        this.resetLoc();
         return score;
-    }
-
-    public void resetAnimationSequence()
-    {
-        for (int stack = 0; stack < myGrid.length; stack++)
-        {
-            for (int row = 0; row < myGrid[0].length; row++)
-            {
-                for (int col = 0; col < myGrid[0][0].length; col++)
-                {
-                    myGrid[stack][row][col].resetAnimationSeq();
-                    myGrid[stack][row][col].setNewLoc(new Loc(stack, row, col));
-                }
-            }
-        }
     }
 
 

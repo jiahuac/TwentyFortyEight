@@ -8,7 +8,7 @@ import java.awt.event.*;
  * Title Screen class for 3D-2048 game
  * Introductory Title Screen for 2048 game
  * @author Jiahua Chen
- * @version alph-1.0 05.05.2019
+ * @version beta-1.0 05.23.2019
  */
 public class TitleScreen extends JPanel
 {

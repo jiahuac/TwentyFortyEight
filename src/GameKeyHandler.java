@@ -7,7 +7,7 @@ import java.awt.event.*;
  * KeyHandler class for 3D-2048 game
  * KeyHandler for the GameScreen and InstructionScreen (it's used twice so it's a separate class)
  * @author Jiahua Chen
- * @version alph-1.0 05.05.2019
+ * @version beta-1.0 05.23.2019
  */
 public class GameKeyHandler implements KeyListener
 {
@@ -48,7 +48,7 @@ public class GameKeyHandler implements KeyListener
             myGrid.doMove(Move.BACKWARD);
         }
         else { }
-        ((GameScreen) myScreen).paintSequence();
+        this.myGrid.resetLoc();
         System.out.println(myGrid);
     }
 
