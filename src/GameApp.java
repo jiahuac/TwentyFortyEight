@@ -25,12 +25,14 @@ public class GameApp {
     private static final String TITLE = "Title";
     private static final String GAME = "Game";
     private static final String INSTRUCTION = "Instruction";
+    private static final String PAUSE = "Pause";
 
 
     /** the screen of the app */
     private GameScreen myGameScreen;
     private TitleScreen myTitleScreen;
     private InstructionScreen myInstructionScreen;
+    private PauseScreen myPauseScreen;
 
     private Grid gameGrid;
 
@@ -38,8 +40,9 @@ public class GameApp {
     {
         myTitleScreen = new TitleScreen(this);
         gameGrid = new Grid();
-        myGameScreen = new GameScreen(gameGrid);
+        myGameScreen = new GameScreen(gameGrid, this);
         myInstructionScreen = new InstructionScreen(this);
+        myPauseScreen = new PauseScreen(this);
     }
 
     public void run()
@@ -55,6 +58,7 @@ public class GameApp {
         myPanel.add(myGameScreen, GAME);
         myPanel.add(myTitleScreen, TITLE);
         myPanel.add(myInstructionScreen, INSTRUCTION);
+        myPanel.add(myPauseScreen, PAUSE);
         CardLayout layout = (CardLayout) myPanel.getLayout();
         layout.show(myPanel, TITLE);
 
@@ -74,6 +78,28 @@ public class GameApp {
         CardLayout layout = (CardLayout) myPanel.getLayout();
         layout.show(myPanel, INSTRUCTION);
         myInstructionScreen.requestFocusInWindow();
+    }
+
+    public void loadTitleScreen()
+    {
+        CardLayout layout = (CardLayout) myPanel.getLayout();
+        layout.show(myPanel, TITLE);
+        myTitleScreen.requestFocusInWindow();
+        reset();
+    }
+
+    public void reset()
+    {
+        myGameScreen = new GameScreen(new Grid(), this);
+        myWindow.dispose();
+        run();
+    }
+
+    public void loadPauseScreen()
+    {
+        CardLayout layout = (CardLayout) myPanel.getLayout();
+        layout.show(myPanel, PAUSE);
+        myPauseScreen.requestFocusInWindow();
     }
 
     public static void main(String[] args)
