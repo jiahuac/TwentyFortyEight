@@ -2,14 +2,79 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c151ab6-0c12-4f72-9891-9aebe9b92ff1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ImageButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Animator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2048 Instructions Screen.psd" beforeDir="false" afterPath="$PROJECT_DIR$/2048 Instructions Screen.psd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/GameApp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/GameKeyHandler.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/GameScreen.FieldUpdater.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/GameScreen.MyButtonListener.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/GameScreen.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/Grid.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/InstructionScreen.FieldUpdater.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/InstructionScreen.MyButtonListener.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/InstructionScreen.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/Loc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/Move.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/PauseScreen.MyButtonListener.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/PauseScreen.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/Tile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/TitleScreen.MyButtonListener.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/TitleScreen.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/allclasses-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/allclasses.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/allpackages-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/constant-values.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/deprecated-list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/element-list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/help-doc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/index-all.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/external/jquery/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/images/ui-bg_flat_0_aaaaaa_40x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/images/ui-bg_flat_75_ffffff_40x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/images/ui-bg_glass_55_fbf9ee_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/images/ui-bg_glass_65_ffffff_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/images/ui-bg_glass_75_dadada_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/images/ui-bg_glass_75_e6e6e6_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/images/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/images/ui-bg_highlight-soft_75_cccccc_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/images/ui-icons_222222_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/images/ui-icons_2e83ff_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/images/ui-icons_454545_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/images/ui-icons_888888_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/jquery-3.3.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/jquery-migrate-3.0.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/jquery-ui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/jquery-ui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/jquery-ui.structure.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/jquery-ui.structure.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/jszip-utils/dist/jszip-utils-ie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/jszip-utils/dist/jszip-utils-ie.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/jszip-utils/dist/jszip-utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/jszip-utils/dist/jszip-utils.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/jszip/dist/jszip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/jquery/jszip/dist/jszip.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/member-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/overview-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/package-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/resources/glass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/resources/x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/serialized-form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/TwentyFortyEight_doc/type-search-index.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameKeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameKeyHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InstructionScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InstructionScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PauseScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PauseScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TitleScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TitleScreen.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -27,7 +92,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameKeyHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
+            <state relative-caret-position="-443">
               <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -39,8 +104,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+            <state relative-caret-position="621">
+              <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2895#2896#0" expanded="true" />
+                <element signature="e#2933#2934#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/TitleScreen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1545">
+              <caret line="103" column="19" lean-forward="true" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,8 +130,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+            <state relative-caret-position="180">
+              <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,10 +140,20 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TitleScreen.java">
+        <entry file="file://$PROJECT_DIR$/src/screens/ControlTooltipWide.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/screens/ControlTooltip.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PauseScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="84" column="8" selection-start-line="84" selection-start-column="8" selection-end-line="85" selection-end-column="22" />
+            <state relative-caret-position="-208">
+              <caret line="21" selection-start-line="20" selection-start-column="4" selection-end-line="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,27 +161,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ImageButton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="37">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/InstructionScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1245">
-              <caret line="83" column="29" lean-forward="true" selection-start-line="83" selection-start-column="29" selection-end-line="83" selection-end-column="29" />
+            <state relative-caret-position="270">
+              <caret line="70" column="22" selection-start-line="69" selection-start-column="8" selection-end-line="70" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2523">
-              <caret line="4" column="23" selection-start-line="4" selection-end-line="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4718#4719#0" expanded="true" />
-                <element signature="e#4757#4758#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -101,8 +188,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Grid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5985">
-              <caret line="408" column="50" selection-start-line="408" selection-start-column="50" selection-end-line="408" selection-end-column="50" />
+            <state relative-caret-position="221">
+              <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -132,8 +219,8 @@
       <find>oldLoc</find>
       <find>.add</find>
       <find>incrementTile</find>
-      <find>reset</find>
       <find>resetAnimation</find>
+      <find>reset</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -147,13 +234,14 @@
         <option value="$PROJECT_DIR$/src/Animator.java" />
         <option value="$PROJECT_DIR$/src/onlineTest.java" />
         <option value="$PROJECT_DIR$/src/Tile.java" />
-        <option value="$PROJECT_DIR$/src/PauseScreen.java" />
         <option value="$PROJECT_DIR$/src/GameKeyHandler.java" />
+        <option value="$PROJECT_DIR$/src/TitleScreen.java" />
+        <option value="$PROJECT_DIR$/src/ImageButton.java" />
+        <option value="$PROJECT_DIR$/src/InstructionScreen.java" />
         <option value="$PROJECT_DIR$/src/Grid.java" />
+        <option value="$PROJECT_DIR$/src/PauseScreen.java" />
         <option value="$PROJECT_DIR$/src/GameScreen.java" />
         <option value="$PROJECT_DIR$/src/GameApp.java" />
-        <option value="$PROJECT_DIR$/src/TitleScreen.java" />
-        <option value="$PROJECT_DIR$/src/InstructionScreen.java" />
       </list>
     </option>
   </component>
@@ -169,7 +257,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -182,10 +269,17 @@
               <item name="TwentyFortyEight" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="TwentyFortyEight" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwentyFortyEight" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="screens" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -270,16 +364,18 @@
       <workItem from="1559142446504" duration="440000" />
       <workItem from="1559143555522" duration="1008000" />
       <workItem from="1559442594835" duration="6986000" />
+      <workItem from="1559475872842" duration="5683000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31970000" />
+    <option name="totallyTimeSpent" value="37653000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="23" width="1633" height="1027" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3362665" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34066623" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -288,7 +384,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32941177" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32941177" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -346,18 +442,6 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GameScreen.java</url>
-          <line>47</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/KeyHandler.java" />
     <entry file="file://$PROJECT_DIR$/src/Screen.java" />
@@ -382,16 +466,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Animator.java" />
-    <entry file="file://$PROJECT_DIR$/src/PauseScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/Graphics_layouts/OrbPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
@@ -402,9 +476,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="23" selection-start-column="7" selection-end-line="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4718#4719#0" expanded="true" />
+            <element signature="e#4757#4758#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.1.jdk/Contents/Home/lib/src.zip!/java.desktop/javax/imageio/ImageIO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="1355" column="18" selection-start-line="1355" selection-start-column="18" selection-end-line="1355" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GameKeyHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="-443">
           <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -414,50 +507,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Grid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5985">
-          <caret line="408" column="50" selection-start-line="408" selection-start-column="50" selection-end-line="408" selection-end-column="50" />
+        <state relative-caret-position="221">
+          <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tile.java">
+    <entry file="file://$PROJECT_DIR$/src/ImageButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2523">
-          <caret line="4" column="23" selection-start-line="4" selection-end-line="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4718#4719#0" expanded="true" />
-            <element signature="e#4757#4758#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TitleScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="84" column="8" selection-start-line="84" selection-start-column="8" selection-end-line="85" selection-end-column="22" />
+        <state relative-caret-position="37">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -466,8 +527,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/InstructionScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1245">
-          <caret line="83" column="29" lean-forward="true" selection-start-line="83" selection-start-column="29" selection-end-line="83" selection-end-column="29" />
+        <state relative-caret-position="270">
+          <caret line="70" column="22" selection-start-line="69" selection-start-column="8" selection-end-line="70" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PauseScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-208">
+          <caret line="21" selection-start-line="20" selection-start-column="4" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/ControlTooltip.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/ControlTooltipWide.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2895#2896#0" expanded="true" />
+            <element signature="e#2933#2934#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TitleScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1545">
+          <caret line="103" column="19" lean-forward="true" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

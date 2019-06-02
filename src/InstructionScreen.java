@@ -15,18 +15,17 @@ import java.awt.event.MouseAdapter;
  */
 public class InstructionScreen extends JPanel
 {
-    public static final int BUTTON_WIDTH = 200;
-    public static final int BUTTON_HEIGHT = 50;
 
     private static BufferedImage myBackground;
-    private static BufferedImage myPlayButton;
-    private static BufferedImage myPlayButtonHover;
-    private static BufferedImage myMenuButton;
-    private static BufferedImage myMenuButtonHover;
+
+    private ImageButton resetButton;
+    private boolean resetHover;
+    private ImageButton playButton;
+    private boolean playHover;
+    private ImageButton menuButton;
+    private boolean menuHover;
 
     private GameApp myApp;
-
-    private Rectangle2D.Double myGameButton;
 
     private Grid myGrid;
 
@@ -35,28 +34,26 @@ public class InstructionScreen extends JPanel
         myApp = app;
         myGrid = new Grid(2);
         this.addMouseListener(new MyButtonListener());
+        this.addMouseMotionListener(new MyHoverListener());
         FieldUpdater up = new FieldUpdater();
         this.addKeyListener(new GameKeyHandler(myGrid, this));
         this.setFocusable(true);
         this.requestFocusInWindow();
+
+        resetButton = new ImageButton(35, 317, 155, 15, "/screens" +
+                "/insResetButton.png", "/screens/insResetHover.png");
+
+        playButton = new ImageButton(246, 317, 136, 19, "/screens" +
+                "/insPlayButton.png", "/screens/insPlayHover.png");
+
+        menuButton = new ImageButton(440, 317, 127, 15, "/screens" +
+                "/insMenuButton.png", "/screens/insMenuHover.png");
 
         try
         {
             InputStream is = getClass().getResourceAsStream("/screens" +
                     "/insScreen.png");
             myBackground = ImageIO.read(is);
-            is = getClass().getResourceAsStream("/screens" +
-                    "/PlayButton.png");
-            myPlayButton = ImageIO.read(is);
-            is = getClass().getResourceAsStream("/screens" +
-                    "/PlayHover.png");
-            myPlayButtonHover = ImageIO.read(is);
-            is = getClass().getResourceAsStream("/screens" +
-                    "/InstructionsButton.png");
-            myMenuButton = ImageIO.read(is);
-            is = getClass().getResourceAsStream("/screens" +
-                    "/InstructionsHover.png");
-            myMenuButtonHover = ImageIO.read(is);
         }
         catch(IOException ioe)
         {
@@ -73,14 +70,10 @@ public class InstructionScreen extends JPanel
         g2.drawImage(myBackground, 0, 0, GameApp.WIDTH, GameApp.HEIGHT - 20,
                 null);
 
-//        int buttonX = (GameApp.WIDTH / 2) - (BUTTON_WIDTH / 2);
-//        int buttonY = (GameApp.HEIGHT / 2) - (BUTTON_HEIGHT / 2) + 100;
-//
-//        myGameButton = new Rectangle2D.Double(buttonX, buttonY,
-//                BUTTON_WIDTH, BUTTON_HEIGHT);
-//        g2.draw(myGameButton);
-//        g2.setFont(new Font("Arial", Font.BOLD, 18));
-//        g2.drawString("Play the real game!", buttonX + 20, buttonY + 30);
+        resetButton.draw(g2, resetHover);
+        menuButton.draw(g2, menuHover);
+        playButton.draw(g2, playHover);
+
         myGrid.drawBoard(g2);
         for (Tile t : myGrid.getTiles())
         {
@@ -88,16 +81,55 @@ public class InstructionScreen extends JPanel
         }
     }
 
+    private class MyHoverListener implements MouseMotionListener
+    {
+        public void mouseDragged(MouseEvent e) {
+        }
+
+        public void mouseMoved(MouseEvent e) {
+
+            if (resetButton.doesContain(e))
+            {
+                resetHover = true;
+                playHover = false;
+                menuHover = false;
+            }
+            else if (playButton.doesContain(e))
+            {
+                resetHover = false;
+                playHover = true;
+                menuHover = false;
+            }
+            else if (menuButton.doesContain(e))
+            {
+                resetHover = false;
+                playHover = false;
+                menuHover = true;
+            }
+            else
+            {
+                resetHover = false;
+                playHover = false;
+                menuHover = false;
+            }
+        }
+    }
+
     private class MyButtonListener implements MouseListener
     {
         public void mousePressed(MouseEvent e)
         {
-            int mouseX = e.getX();
-            int mouseY = e.getY();
-
-            if (myGameButton.contains(mouseX, mouseY))
+            if (resetButton.doesContain(e))
+            {
+                myGrid.rebuildGrid();
+            }
+            else if (playButton.doesContain(e))
             {
                 myApp.loadGameScreen();
+            }
+            else if (menuButton.doesContain(e))
+            {
+                myApp.loadTitleScreen();
             }
         }
 

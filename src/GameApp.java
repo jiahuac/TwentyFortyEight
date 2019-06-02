@@ -69,6 +69,7 @@ public class GameApp {
         layout.show(myPanel, TITLE);
 
         myWindow.add(myPanel);
+
         myWindow.setVisible(true);
     }
 
@@ -100,9 +101,7 @@ public class GameApp {
     /** Resets the game and clears the board */
     public void reset()
     {
-        myGameScreen = new GameScreen(new Grid(), this);
-        myWindow.dispose();
-        run();
+        gameGrid.rebuildGrid();
     }
 
     /** Loads PauseScreen */

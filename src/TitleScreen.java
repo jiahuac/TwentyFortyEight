@@ -15,27 +15,14 @@ import java.awt.event.MouseAdapter;
  */
 public class TitleScreen extends JPanel
 {
-    public static final int playX = 70;
-    public static final int playY = 178;
-    public static final int playW = 78;
-    public static final int playH = 38;
-
-    public static final int insX = 70;
-    public static final int insY = 254;
-    public static final int insW = 223;
-    public static final int insH = 29;
 
     private GameApp myApp;
-    
-    private Rectangle2D.Double gameButton;
 
-    private Rectangle2D.Double insButton;
+    ImageButton playButton;
+
+    ImageButton instructionsButton;
 
     private static BufferedImage myBackground;
-    private static BufferedImage myPlayButton;
-    private static BufferedImage myPlayButtonHover;
-    private static BufferedImage myInstructionsButton;
-    private static BufferedImage myInstructionsButtonHover;
 
     private boolean playButtonHover;
     private boolean instructionsButtonHover;
@@ -49,28 +36,19 @@ public class TitleScreen extends JPanel
         this.addMouseListener(new MyButtonListener());
         this.addMouseMotionListener(new MyHoverListener());
 
+        playButton = new ImageButton(70, 178, 78, 38,
+                "/screens/PlayButton.png", "/screens/PlayHover.png");
 
-        gameButton = new Rectangle2D.Double(playX, playY, playW, playH);
-
-        insButton = new Rectangle2D.Double(insX, insY, insW, insH);
+        instructionsButton = new ImageButton(70, 254, 223, 29,
+                "/screens/InstructionsButton.png", "/screens" +
+                "/InstructionsHover" +
+                ".png");
 
         try
         {
             InputStream is = getClass().getResourceAsStream("/screens" +
                     "/TitleScreenBackground.png");
             myBackground = ImageIO.read(is);
-            is = getClass().getResourceAsStream("/screens" +
-                "/PlayButton.png");
-            myPlayButton = ImageIO.read(is);
-            is = getClass().getResourceAsStream("/screens" +
-                "/PlayHover.png");
-            myPlayButtonHover = ImageIO.read(is);
-            is = getClass().getResourceAsStream("/screens" +
-                "/InstructionsButton.png");
-            myInstructionsButton = ImageIO.read(is);
-            is = getClass().getResourceAsStream("/screens" +
-                "/InstructionsHover.png");
-            myInstructionsButtonHover = ImageIO.read(is);
         }
         catch(IOException ioe)
         {
@@ -85,25 +63,9 @@ public class TitleScreen extends JPanel
         g2.drawImage(myBackground, 0, 0, GameApp.WIDTH, GameApp.HEIGHT - 20,
                 null);
 
-        if (playButtonHover)
-        {
-            g2.drawImage(myPlayButtonHover, playX - 2, playY, playW, playH,
-                    null);
-        }
-        else
-        {
-            g2.drawImage(myPlayButton, playX, playY, playW - 4, playH, null);
-        }
+        playButton.draw(g2, playButtonHover);
 
-        if (instructionsButtonHover)
-        {
-            g2.drawImage(myInstructionsButtonHover, insX, insY, insW, insH,
-                    null);
-        }
-        else
-        {
-            g2.drawImage(myInstructionsButton, insX, insY, insW, insH, null);
-        }
+        instructionsButton.draw(g2, instructionsButtonHover);
     }
 
 
@@ -113,16 +75,14 @@ public class TitleScreen extends JPanel
         }
 
         public void mouseMoved(MouseEvent e) {
-            int mouseX = e.getX();
-            int mouseY = e.getY();
 
-            if (mouseX > playX && mouseX < playX + playW && mouseY > playY && mouseY < playY + playH)
+            if (playButton.doesContain(e))
             {
                 playButtonHover = true;
                 instructionsButtonHover = false;
                 repaint();
             }
-            else if (mouseX > insX && mouseX < insX + insW && mouseY > insY && mouseY < insY + insH)
+            else if (instructionsButton.doesContain(e))
             {
                 playButtonHover = false;
                 instructionsButtonHover = true;
@@ -141,14 +101,11 @@ public class TitleScreen extends JPanel
     {
         public void mousePressed(MouseEvent e)
         {
-            int mouseX = e.getX();
-            int mouseY = e.getY();
-
-            if (gameButton.contains(mouseX, mouseY))
+            if (playButton.doesContain(e))
             {
                 myApp.loadGameScreen();
             }
-            else if (insButton.contains(mouseX, mouseY))
+            else if (instructionsButton.doesContain(e))
             {
                 myApp.loadInstructionScreen();
             }

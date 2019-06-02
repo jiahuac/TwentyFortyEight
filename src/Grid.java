@@ -42,6 +42,12 @@ public class Grid
     {
         size = dim;
         myGrid = new Tile[size][size][size];
+        rebuildGrid();
+    }
+
+    public void rebuildGrid()
+    {
+        score = 0;
         for (int stack = 0; stack < myGrid.length; stack++)
         {
             for (int row = 0; row < myGrid[0].length; row++)

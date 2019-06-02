@@ -1,8 +1,11 @@
 import java.awt.*;
+import java.awt.geom.*;
 import javax.swing.*;
-import javax.swing.event.*;
 import java.awt.event.*;
-import java.awt.geom.Rectangle2D;
+import java.io.*;
+import java.awt.image.*;
+import javax.imageio.*;
+import java.awt.event.MouseAdapter;
 
 /**
  * GameScreen class for 3D-2048 game
@@ -21,6 +24,10 @@ public class GameScreen extends JPanel
     /** Pause Button */
     private Rectangle2D.Double myPauseButton;
 
+    private static BufferedImage myBackground;
+    private static BufferedImage myTooltip;
+
+
     /** GameScreen Constructor
      * @param grid Grid of the game
      * @param app GameApp of the Game (for changing screens)
@@ -34,6 +41,20 @@ public class GameScreen extends JPanel
         this.requestFocusInWindow();
         addMouseListener(new MyButtonListener());
 
+        try
+        {
+            InputStream is = getClass().getResourceAsStream("/screens" +
+                    "/GameScreen.png");
+            myBackground = ImageIO.read(is);
+            is = getClass().getResourceAsStream("/screens" +
+                    "/ControlTooltip.png");
+            myTooltip = ImageIO.read(is);
+        }
+        catch(IOException ioe)
+        {
+            System.out.println("InputStream ERROR");
+        }
+
         FieldUpdater up = new FieldUpdater();
         up.start();
     }
@@ -46,6 +67,9 @@ public class GameScreen extends JPanel
     {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
+
+        g2.drawImage(myBackground, 0, 0, GameApp.WIDTH, GameApp.HEIGHT - 20,
+                null);
 
         int buttonX = 600;
         int buttonY = 30;
@@ -61,7 +85,14 @@ public class GameScreen extends JPanel
         {
             t.drawMe(g2);
         }
-        g2.drawString("Score: " + Integer.toString(myGrid.getScore()), 50, 50);
+
+        if (true)
+        {
+            g2.drawImage(myTooltip, 202, 69, 364,
+                    225,
+                    null);
+        }
+        g2.drawString("Score: " + Integer.toString(myGrid.getScore()), 150, 50);
     }
 
     private class FieldUpdater extends Thread {
