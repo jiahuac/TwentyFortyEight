@@ -1,60 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c151ab6-0c12-4f72-9891-9aebe9b92ff1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2048 Game Screen.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2048 Instructions Screen.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2048 Pause Screen.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2048 Title Screen.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Animator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beta_jchen20/Animator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beta_jchen20/GameApp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beta_jchen20/GameKeyHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beta_jchen20/GameScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beta_jchen20/Grid.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beta_jchen20/InstructionScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beta_jchen20/Loc.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beta_jchen20/Move.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beta_jchen20/PauseScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beta_jchen20/Tile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beta_jchen20/TitleScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beta_jchen20/tileimages/0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beta_jchen20/tileimages/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beta_jchen20/tileimages/10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beta_jchen20/tileimages/11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beta_jchen20/tileimages/12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beta_jchen20/tileimages/13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beta_jchen20/tileimages/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beta_jchen20/tileimages/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beta_jchen20/tileimages/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beta_jchen20/tileimages/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beta_jchen20/tileimages/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beta_jchen20/tileimages/7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beta_jchen20/tileimages/8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beta_jchen20/tileimages/9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/milestone2_JChen/Grid.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/milestone2_JChen/Loc.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/milestone2_JChen/Milestone2_JChen.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/milestone2_JChen/Move.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/milestone2_JChen/Tile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TwentyFortyEight/META-INF/TwentyFortyEight.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameKeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameKeyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ImageButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ImageButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InstructionScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InstructionScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Loc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Loc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Move.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PauseScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PauseScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TitleScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TitleScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight.gpj" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight.gpj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/InstructionsGridLock.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/InstructionsGridLock.png" afterDir="false" />
-    </list>
+    <list default="true" id="2c151ab6-0c12-4f72-9891-9aebe9b92ff1" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -247,16 +194,17 @@
       <workItem from="1559499966593" duration="292000" />
       <workItem from="1559501268702" duration="106000" />
       <workItem from="1559501378602" duration="102000" />
+      <workItem from="1559501867438" duration="59000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50173000" />
+    <option name="totallyTimeSpent" value="50232000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="45" y="23" width="1635" height="1027" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25549278" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25863153" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
