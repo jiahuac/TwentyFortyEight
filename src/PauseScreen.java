@@ -85,11 +85,16 @@ public class PauseScreen extends JPanel
             }
             else
             {
-                resetHover = false;
-                resumeHover = false;
+                resetHover();
                 repaint();
             }
         }
+    }
+
+    private void resetHover()
+    {
+        resetHover = false;
+        resumeHover = false;
     }
 
     private class MyButtonListener implements MouseListener
@@ -99,10 +104,12 @@ public class PauseScreen extends JPanel
             if (resumeButton.doesContain(e))
             {
                 myApp.loadGameScreen();
+                resetHover();
             }
             else if (resetButton.doesContain(e))
             {
                 myApp.loadTitleScreen();
+                resetHover();
             }
         }
 

@@ -14,44 +14,68 @@ import java.awt.event.MouseAdapter;
  * @version beta-1.0 05.23.2019
  */
 
-public class GameScreen extends JPanel
-{
+public class GameScreen extends JPanel {
 
-    /** GameApp and Grid objects */
+    /**
+     * GameApp and Grid objects
+     */
     private GameApp myApp;
     private Grid myGrid;
 
-    /** Pause Button */
+    /**
+     * Pause Button
+     */
     private Rectangle2D.Double myPauseButton;
+
+    private ImageButton remindButton;
+    private boolean remindHover;
+
+    private ImageButton pauseButton;
+    private boolean pauseHover;
+
+    private ImageButton scoreButton;
+    private boolean scoreHover;
+    private boolean hoverTooltip = true;
 
     private static BufferedImage myBackground;
     private static BufferedImage myTooltip;
+    private static BufferedImage myScoreTooltip;
+
+    private static final Color tileGrey = new Color(119, 110, 101);
 
 
-    /** GameScreen Constructor
+    /**
+     * GameScreen Constructor
+     *
      * @param grid Grid of the game
-     * @param app GameApp of the Game (for changing screens)
+     * @param app  GameApp of the Game (for changing screens)
      */
-    public GameScreen(Grid grid, GameApp app)
-    {
+    public GameScreen(Grid grid, GameApp app) {
         myGrid = grid;
         myApp = app;
         this.addKeyListener(new GameKeyHandler(myGrid, this));
         this.setFocusable(true);
         this.requestFocusInWindow();
-        addMouseListener(new MyButtonListener());
+        this.addMouseListener(new MyButtonListener());
+        this.addMouseMotionListener(new MyHoverListener());
 
-        try
-        {
+        remindButton = new ImageButton(535, 316, 201, 12,
+                "/screens/RemindButton.png", "/screens/RemindHover.png");
+        pauseButton = new ImageButton(662, 24, 74, 38, "/screens/GamePauseButton" +
+                ".png", "/screens/GamePauseHover.png");
+        scoreButton = new ImageButton(455, 24, 200, 38, "/screens/ScoreButton" +
+                ".png", "/screens/ScoreHover.png");
+        try {
             InputStream is = getClass().getResourceAsStream("/screens" +
                     "/GameScreen.png");
             myBackground = ImageIO.read(is);
             is = getClass().getResourceAsStream("/screens" +
                     "/ControlTooltip.png");
             myTooltip = ImageIO.read(is);
-        }
-        catch(IOException ioe)
-        {
+            is = getClass().getResourceAsStream("/screens" +
+                    "/ScoreTooltip.png");
+            myScoreTooltip = ImageIO.read(is);
+        } catch (IOException ioe) {
             System.out.println("InputStream ERROR");
         }
 
@@ -61,67 +85,106 @@ public class GameScreen extends JPanel
 
     /**
      * Paints the screen
+     *
      * @param g Graphics object
      */
-    public void paintComponent(Graphics g)
-    {
+    public void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
 
         g2.drawImage(myBackground, 0, 0, GameApp.WIDTH, GameApp.HEIGHT - 20,
                 null);
 
-        int buttonX = 600;
-        int buttonY = 30;
+        remindButton.draw(g2, remindHover);
+        pauseButton.draw(g2, pauseHover);
 
-        myPauseButton = new Rectangle2D.Double(buttonX, buttonY,
-                70, 30);
-        g2.draw(myPauseButton);
-        g2.setFont(new Font("Arial", Font.PLAIN, 18));
-        g2.drawString("Pause", buttonX + 10, buttonY + 23);
+        scoreButton.draw(g2, scoreHover);
 
         myGrid.drawBoard(g2);
-        for (Tile t : myGrid.getTiles())
-        {
+        for (Tile t : myGrid.getTiles()) {
             t.drawMe(g2);
         }
 
-        if (true)
-        {
+        if (remindHover) {
             g2.drawImage(myTooltip, 202, 69, 364,
                     225,
                     null);
         }
-        g2.drawString("Score: " + Integer.toString(myGrid.getScore()), 150, 50);
+
+        g2.setFont(new Font("PT Sans Caption", Font.BOLD, 17));
+        g2.setColor(tileGrey);
+        if (scoreHover)
+        {
+            g2.setColor(Color.BLACK);
+            g2.drawImage(myScoreTooltip, 227, 12, 222,
+                    67,
+                    null);
+        }
+        g2.drawString(Integer.toString(myGrid.getScore()), 534, 49);
+
+        if (hoverTooltip)
+        {
+            g2.setFont(new Font("PT Sans Caption", Font.PLAIN, 8));
+            g2.drawString("Hover over me to see an explanation of scores", 463,
+                    74);
+        }
     }
 
     private class FieldUpdater extends Thread {
-        public void run()
-        {
-            while (true)
-            {
+        public void run() {
+            while (true) {
                 repaint();
-                try
-                {
+                try {
                     sleep(1);
-                }
-                catch (InterruptedException ie)
-                {
+                } catch (InterruptedException ie) {
 
                 }
             }
         }
     }
 
+
+    private class MyHoverListener implements MouseMotionListener {
+        public void mouseDragged(MouseEvent e) {
+        }
+
+        public void mouseMoved(MouseEvent e) {
+
+            if (remindButton.doesContain(e)) {
+                remindHover = true;
+                pauseHover = false;
+                scoreHover = false;
+            } else if (pauseButton.doesContain(e)) {
+                remindHover = false;
+                pauseHover = true;
+                scoreHover = false;
+            } else if (scoreButton.doesContain(e))
+            {
+                hoverTooltip = false;
+                remindHover = false;
+                pauseHover = false;
+                scoreHover = true;
+            }
+            else {
+                resetHover();
+            }
+        }
+    }
+
+    public void resetHover()
+    {
+        remindHover = false;
+        pauseHover = false;
+        scoreHover = false;
+    }
+
     private class MyButtonListener implements MouseListener
     {
         public void mousePressed(MouseEvent e)
         {
-            int mouseX = e.getX();
-            int mouseY = e.getY();
-
-            if (myPauseButton.contains(mouseX, mouseY))
+            if (pauseButton.doesContain(e))
             {
+                resetHover();
                 myApp.loadPauseScreen();
             }
         }

@@ -108,11 +108,16 @@ public class InstructionScreen extends JPanel
             }
             else
             {
-                resetHover = false;
-                playHover = false;
-                menuHover = false;
+                resetHover();
             }
         }
+    }
+
+    public void resetHover()
+    {
+        resetHover = false;
+        playHover = false;
+        menuHover = false;
     }
 
     private class MyButtonListener implements MouseListener
@@ -126,10 +131,12 @@ public class InstructionScreen extends JPanel
             else if (playButton.doesContain(e))
             {
                 myApp.loadGameScreen();
+                resetHover();
             }
             else if (menuButton.doesContain(e))
             {
                 myApp.loadTitleScreen();
+                resetHover();
             }
         }
 
