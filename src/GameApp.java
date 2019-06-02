@@ -15,13 +15,15 @@ public class GameApp {
     public static final int WIDTH = 770;
 
     /** height of the screen */
-    public static final int HEIGHT = 370;
+    public static final int HEIGHT = 390;
 
     /** the window of the app */
     private JFrame myWindow;
-
+    
+    /** the window of the app */
     private JPanel myPanel;
 
+    /** Names of the screens */
     private static final String TITLE = "Title";
     private static final String GAME = "Game";
     private static final String INSTRUCTION = "Instruction";
@@ -34,8 +36,10 @@ public class GameApp {
     private InstructionScreen myInstructionScreen;
     private PauseScreen myPauseScreen;
 
+    /** Grid object */
     private Grid gameGrid;
 
+    /** Default constructor, creates a new GameApp */
     public GameApp()
     {
         myTitleScreen = new TitleScreen(this);
@@ -45,9 +49,11 @@ public class GameApp {
         myPauseScreen = new PauseScreen(this);
     }
 
+    /** Runs the GameApp, this is the main code that runs the game */
     public void run()
     {
         myWindow = new JFrame();
+        myWindow.setResizable(false);
 
         myWindow.setSize(WIDTH, HEIGHT);
         myWindow.setTitle("2048^3");
@@ -66,6 +72,7 @@ public class GameApp {
         myWindow.setVisible(true);
     }
 
+    /** Changes the screen to the GameScreen */
     public void loadGameScreen()
     {
         CardLayout layout = (CardLayout) myPanel.getLayout();
@@ -73,6 +80,7 @@ public class GameApp {
         myGameScreen.requestFocusInWindow();
     }
 
+    /** Changes the screen to the InstructionScreen */
     public void loadInstructionScreen()
     {
         CardLayout layout = (CardLayout) myPanel.getLayout();
@@ -80,6 +88,7 @@ public class GameApp {
         myInstructionScreen.requestFocusInWindow();
     }
 
+    /** Changes the screen to the TitleScreen */
     public void loadTitleScreen()
     {
         CardLayout layout = (CardLayout) myPanel.getLayout();
@@ -88,6 +97,7 @@ public class GameApp {
         reset();
     }
 
+    /** Resets the game and clears the board */
     public void reset()
     {
         myGameScreen = new GameScreen(new Grid(), this);
@@ -95,6 +105,7 @@ public class GameApp {
         run();
     }
 
+    /** Loads PauseScreen */
     public void loadPauseScreen()
     {
         CardLayout layout = (CardLayout) myPanel.getLayout();
@@ -102,6 +113,7 @@ public class GameApp {
         myPauseScreen.requestFocusInWindow();
     }
 
+    /** Main Code */
     public static void main(String[] args)
     {
         GameApp main = new GameApp();

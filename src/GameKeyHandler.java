@@ -11,15 +11,25 @@ import java.awt.event.*;
  */
 public class GameKeyHandler implements KeyListener
 {
+    /* Game Grid */
     private Grid myGrid;
+
+    /* Game Screen */
     private JPanel myScreen;
 
+    /** GameKeyHandler Constructor
+     * @param grid grid obj of the game
+     * @param screen screen obj of the game
+     */
     public GameKeyHandler(Grid grid, JPanel screen)
     {
         this.myGrid = grid;
         this.myScreen = screen;
     }
 
+    /** Actions on keypress
+     * @param e KeyEvent
+     */
     public void keyPressed(KeyEvent e)
     {
         int code = e.getKeyCode();
@@ -52,11 +62,19 @@ public class GameKeyHandler implements KeyListener
         System.out.println(myGrid);
     }
 
+    /** actions on keyrelease
+     * does nothing
+     * @param e KeyEvent
+     */
     public void keyReleased(KeyEvent e)
     {
 
     }
 
+    /** actions on keyTyped
+     * does nothing
+     * @param e KeyEvent
+     */
     public void keyTyped(KeyEvent e)
     {
 

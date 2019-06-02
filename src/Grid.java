@@ -33,7 +33,11 @@ public class Grid
         this(3);
     }
 
-    /** constructs a grid of dimensions/side length size, with all empty tiles */
+    /**
+     * constructs a grid of dimensions/side length size
+     * with all empty tiles
+     * @param dim Dimension of the grid.
+     * */
     public Grid(int dim)
     {
         size = dim;
@@ -151,7 +155,7 @@ public class Grid
     /**
      * tries to shift tile from loc1 to loc2
      * if (r2, c2, s2) is an empty tile
-     * @return
+     * @return if it's shifted or not
      */
     public boolean tryShift(Loc loc1, Loc loc2)
     {
@@ -164,7 +168,13 @@ public class Grid
         }
         else { return false; }
     }
-    
+
+    /**
+     * tries to combine loc1 tile and loc2 tile
+     * @param loc1 location of first tile
+     * @param loc2 location of last tile
+     * @return score if combined
+     */
     public int tryCombine(Loc loc1, Loc loc2)
     {
 //        System.out.println("   * tryCombine [" + loc1 + "], [" + loc2 + "]");
@@ -181,6 +191,13 @@ public class Grid
         else { return 0; }
     }
 
+    /**
+     * tries to combine a whole stack
+     * @param start the starting coordinate of the stack
+     * @param dir the direction that the stack is being combined in
+     * @param numTimes the number of times to tryCombine
+     * @return the score of the combination
+     */
     public int combineStack(Loc start, Loc dir, int numTimes)
     {
 //        System.out.println("  ** combineStack [" + start + "], [" + dir + "], " + numTimes);
@@ -198,6 +215,11 @@ public class Grid
         return score;
     }
 
+    /**
+     * Combining the whole grid in a certain direction
+     * @param dir the direction to combine in
+     * @return the score of the combination
+     */
     public int combine(Loc dir)
     {
 //        System.out.println(" *** combine [" + dir + "]");
@@ -240,7 +262,10 @@ public class Grid
         movedAll();
         return ret;
     }
-    
+
+    /**
+     * resets the 'moved' status of every tile
+     */
     public void movedAll()
     {
         for (Tile[][] stack : myGrid)
@@ -254,7 +279,13 @@ public class Grid
             }
         }
     }
-    
+
+    /**
+     * Attemps to shift a stack
+     * @param start the starting coordinate of a stack
+     * @param dir the direction to shift in
+     * @param numTimes the number of times to tryShift
+     */
     public void shiftStack(Loc start, Loc dir, int numTimes)
     {
 //        System.out.println("  ** shiftStack [" + start + "], [" + dir + "], " + numTimes);
@@ -272,7 +303,11 @@ public class Grid
             }
         }
     }
-    
+
+    /**
+     * Tries to shift the entire grid
+     * @param dir the direction to shift in
+     */
     public void shift(Loc dir)
     {
 //        System.out.println(" *** shift [" + dir + "]");
@@ -311,6 +346,9 @@ public class Grid
         }
     }
 
+    /**
+     * Resets the location of all grid entries (Tiles)
+     */
     public void resetLoc()
     {
         for (int stack = 0; stack < myGrid.length; stack++)
@@ -325,6 +363,12 @@ public class Grid
         }
     }
 
+    /**
+     * Makes a move in a certain direction, which involves trying to shift, 
+     * then trying to combine, and then shifting again. 
+     * @param dir the direction to move in
+     * @return the score added from combining
+     */
     public int doMove(Loc dir)
     {
 //        System.out.println(" doMove called; dir: " + dir);
@@ -336,7 +380,10 @@ public class Grid
         return score;
     }
 
-
+    /**
+     * Gets a list of all tiles
+     * @return ArrayList of all tiles
+     */
     public ArrayList<Tile> getTiles()
     {
         ArrayList<Tile> out = new ArrayList<Tile>();
@@ -353,7 +400,11 @@ public class Grid
         return out;
     }
 
-    public void drawEmpty(Graphics2D g)
+    /**
+     * Draws an empty tile in the back
+     * @param g graphics object passed down from higher classes
+     */
+    public void drawBoard(Graphics2D g)
     {
         for (int stack = 0; stack < size; stack++)
         {
@@ -373,27 +424,27 @@ public class Grid
 
     public static void main(String[] args)
     {
-        Grid gameGrid = new Grid();
-        Scanner in = new Scanner(System.in);
-        gameGrid.newTile();
-        System.out.println(gameGrid);
-
-        while (true)
-        {
-            // This working main method demonstrates all the methods in my milestone #2 plan, the debug code of each method is printed in the console.
-             Loc dir;
-             System.out.println("Please enter the direction you want to move (w,a,s,d,q,z) for (up,left,down,right,forward,backward) \n >");
-             char direction = in.next().charAt(0);
-             if (direction == 'w') { dir = Move.UP; }
-             else if (direction == 'a') { dir = Move.LEFT; }
-             else if (direction == 's') { dir = Move.DOWN; }
-             else if (direction == 'd') { dir = Move.RIGHT; }
-             else if (direction == 'q') { dir = Move.FORWARD; }
-             else if (direction == 'z') { dir = Move.BACKWARD; }
-             else { dir = new Loc(0,0,0); }
-
-             gameGrid.doMove(dir);
-             System.out.println(gameGrid);
-        }
+//        Grid gameGrid = new Grid();
+//        Scanner in = new Scanner(System.in);
+//        gameGrid.newTile();
+//        System.out.println(gameGrid);
+//
+//        while (true)
+//        {
+//            // This working main method demonstrates all the methods in my milestone #2 plan, the debug code of each method is printed in the console.
+//             Loc dir;
+//             System.out.println("Please enter the direction you want to move (w,a,s,d,q,z) for (up,left,down,right,forward,backward) \n >");
+//             char direction = in.next().charAt(0);
+//             if (direction == 'w') { dir = Move.UP; }
+//             else if (direction == 'a') { dir = Move.LEFT; }
+//             else if (direction == 's') { dir = Move.DOWN; }
+//             else if (direction == 'd') { dir = Move.RIGHT; }
+//             else if (direction == 'q') { dir = Move.FORWARD; }
+//             else if (direction == 'z') { dir = Move.BACKWARD; }
+//             else { dir = new Loc(0,0,0); }
+//
+//             gameGrid.doMove(dir);
+//             System.out.println(gameGrid);
+//        }
     }
 }

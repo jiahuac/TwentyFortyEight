@@ -1,8 +1,11 @@
 import java.awt.*;
 import java.awt.geom.*;
 import javax.swing.*;
-import javax.swing.event.*;
 import java.awt.event.*;
+import java.io.*;
+import java.awt.image.*;
+import javax.imageio.*;
+import java.awt.event.MouseAdapter;
 
 /**
  * Title Screen class for 3D-2048 game
@@ -12,47 +15,126 @@ import java.awt.event.*;
  */
 public class TitleScreen extends JPanel
 {
-    public static final int BUTTON_WIDTH = 200;
-    public static final int BUTTON_HEIGHT = 50;
+    public static final int playX = 70;
+    public static final int playY = 178;
+    public static final int playW = 78;
+    public static final int playH = 38;
+
+    public static final int insX = 70;
+    public static final int insY = 254;
+    public static final int insW = 223;
+    public static final int insH = 29;
 
     private GameApp myApp;
     
-    private Rectangle2D.Double myGameButton;
+    private Rectangle2D.Double gameButton;
 
-    private Rectangle2D.Double myInstructionsButton;
+    private Rectangle2D.Double insButton;
+
+    private static BufferedImage myBackground;
+    private static BufferedImage myPlayButton;
+    private static BufferedImage myPlayButtonHover;
+    private static BufferedImage myInstructionsButton;
+    private static BufferedImage myInstructionsButtonHover;
+
+    private boolean playButtonHover;
+    private boolean instructionsButtonHover;
 
     public TitleScreen(GameApp app)
     {
         myApp = app;
-        addMouseListener(new MyButtonListener());
+        this.setFocusable(true);
+        this.requestFocusInWindow();
+
+        this.addMouseListener(new MyButtonListener());
+        this.addMouseMotionListener(new MyHoverListener());
+
+
+        gameButton = new Rectangle2D.Double(playX, playY, playW, playH);
+
+        insButton = new Rectangle2D.Double(insX, insY, insW, insH);
+
+        try
+        {
+            InputStream is = getClass().getResourceAsStream("/screens" +
+                    "/TitleScreenBackground.png");
+            myBackground = ImageIO.read(is);
+            is = getClass().getResourceAsStream("/screens" +
+                "/PlayButton.png");
+            myPlayButton = ImageIO.read(is);
+            is = getClass().getResourceAsStream("/screens" +
+                "/PlayHover.png");
+            myPlayButtonHover = ImageIO.read(is);
+            is = getClass().getResourceAsStream("/screens" +
+                "/InstructionsButton.png");
+            myInstructionsButton = ImageIO.read(is);
+            is = getClass().getResourceAsStream("/screens" +
+                "/InstructionsHover.png");
+            myInstructionsButtonHover = ImageIO.read(is);
+        }
+        catch(IOException ioe)
+        {
+            System.out.println("InputStream ERROR");
+        }
     }
 
     public void paintComponent(Graphics g)
     {
         Graphics2D g2 = (Graphics2D) g;
 
-        setBackground(Color.WHITE);
+        g2.drawImage(myBackground, 0, 0, GameApp.WIDTH, GameApp.HEIGHT - 20,
+                null);
 
-        int buttonX = (GameApp.WIDTH / 2) - (BUTTON_WIDTH / 2);
-        int buttonY = (GameApp.HEIGHT / 2) - (BUTTON_HEIGHT / 2);
+        if (playButtonHover)
+        {
+            g2.drawImage(myPlayButtonHover, playX - 2, playY, playW, playH,
+                    null);
+        }
+        else
+        {
+            g2.drawImage(myPlayButton, playX, playY, playW - 4, playH, null);
+        }
 
-        myGameButton = new Rectangle2D.Double(buttonX, buttonY,
-                BUTTON_WIDTH, BUTTON_HEIGHT);
-        g2.draw(myGameButton);
-        g2.setFont(new Font("Arial", Font.BOLD, 18));
-        g2.drawString("Play!", buttonX + 78, buttonY + 30);
+        if (instructionsButtonHover)
+        {
+            g2.drawImage(myInstructionsButtonHover, insX, insY, insW, insH,
+                    null);
+        }
+        else
+        {
+            g2.drawImage(myInstructionsButton, insX, insY, insW, insH, null);
+        }
+    }
 
-        myInstructionsButton = new Rectangle2D.Double(buttonX, buttonY + BUTTON_HEIGHT + 20,
-                BUTTON_WIDTH, BUTTON_HEIGHT);
-        g2.draw(myInstructionsButton);
-        g2.setFont(new Font("Arial", Font.BOLD, 18));
-        g2.drawString("Instructions", buttonX + 50, buttonY + BUTTON_HEIGHT + 50);
 
-        g2.setFont(new Font("Helvetica", Font.BOLD, 36));
-        g2.drawString("2048", buttonX + 58, buttonY - 25);
+    private class MyHoverListener implements MouseMotionListener
+    {
+        public void mouseDragged(MouseEvent e) {
+        }
 
-        g2.setFont(new Font("Helvetica", Font.BOLD, 22));
-        g2.drawString("3", buttonX + 140, buttonY - 40);
+        public void mouseMoved(MouseEvent e) {
+            int mouseX = e.getX();
+            int mouseY = e.getY();
+
+            if (mouseX > playX && mouseX < playX + playW && mouseY > playY && mouseY < playY + playH)
+            {
+                playButtonHover = true;
+                instructionsButtonHover = false;
+                repaint();
+            }
+            else if (mouseX > insX && mouseX < insX + insW && mouseY > insY && mouseY < insY + insH)
+            {
+                playButtonHover = false;
+                instructionsButtonHover = true;
+                repaint();
+            }
+            else
+            {
+                playButtonHover = false;
+                instructionsButtonHover = false;
+                repaint();
+            }
+        }
     }
 
     private class MyButtonListener implements MouseListener
@@ -62,11 +144,11 @@ public class TitleScreen extends JPanel
             int mouseX = e.getX();
             int mouseY = e.getY();
 
-            if (myGameButton.contains(mouseX, mouseY))
+            if (gameButton.contains(mouseX, mouseY))
             {
                 myApp.loadGameScreen();
             }
-            else if (myInstructionsButton.contains(mouseX, mouseY))
+            else if (insButton.contains(mouseX, mouseY))
             {
                 myApp.loadInstructionScreen();
             }
@@ -90,6 +172,24 @@ public class TitleScreen extends JPanel
         public void mouseExited(MouseEvent e)
         {
 
+        }
+    }
+
+    private class FieldUpdater extends Thread {
+        public void run()
+        {
+            while (true)
+            {
+                repaint();
+                try
+                {
+                    sleep(1);
+                }
+                catch (InterruptedException ie)
+                {
+
+                }
+            }
         }
     }
 }

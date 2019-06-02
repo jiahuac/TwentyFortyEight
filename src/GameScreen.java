@@ -14,11 +14,17 @@ import java.awt.geom.Rectangle2D;
 public class GameScreen extends JPanel
 {
 
+    /** GameApp and Grid objects */
     private GameApp myApp;
     private Grid myGrid;
 
-    private Rectangle2D.Double myGameButton;
+    /** Pause Button */
+    private Rectangle2D.Double myPauseButton;
 
+    /** GameScreen Constructor
+     * @param grid Grid of the game
+     * @param app GameApp of the Game (for changing screens)
+     */
     public GameScreen(Grid grid, GameApp app)
     {
         myGrid = grid;
@@ -32,22 +38,25 @@ public class GameScreen extends JPanel
         up.start();
     }
 
+    /**
+     * Paints the screen
+     * @param g Graphics object
+     */
     public void paintComponent(Graphics g)
     {
-//        System.out.println("GameScreen paintComponent called");
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
 
         int buttonX = 600;
         int buttonY = 30;
 
-        myGameButton = new Rectangle2D.Double(buttonX, buttonY,
+        myPauseButton = new Rectangle2D.Double(buttonX, buttonY,
                 70, 30);
-        g2.draw(myGameButton);
+        g2.draw(myPauseButton);
         g2.setFont(new Font("Arial", Font.PLAIN, 18));
         g2.drawString("Pause", buttonX + 10, buttonY + 23);
 
-        myGrid.drawEmpty(g2);
+        myGrid.drawBoard(g2);
         for (Tile t : myGrid.getTiles())
         {
             t.drawMe(g2);
@@ -80,7 +89,7 @@ public class GameScreen extends JPanel
             int mouseX = e.getX();
             int mouseY = e.getY();
 
-            if (myGameButton.contains(mouseX, mouseY))
+            if (myPauseButton.contains(mouseX, mouseY))
             {
                 myApp.loadPauseScreen();
             }
