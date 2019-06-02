@@ -17,6 +17,7 @@ public class InstructionScreen extends JPanel
 {
 
     private static BufferedImage myBackground;
+    private static BufferedImage gridLocked;
 
     private ImageButton resetButton;
     private boolean resetHover;
@@ -54,6 +55,9 @@ public class InstructionScreen extends JPanel
             InputStream is = getClass().getResourceAsStream("/screens" +
                     "/insScreen.png");
             myBackground = ImageIO.read(is);
+            is = getClass().getResourceAsStream("/screens" +
+                    "/InstructionsGridLock.png");
+            gridLocked = ImageIO.read(is);
         }
         catch(IOException ioe)
         {
@@ -78,6 +82,13 @@ public class InstructionScreen extends JPanel
         for (Tile t : myGrid.getTiles())
         {
             t.drawMe(g2);
+        }
+
+        if (myGrid.gridLocked())
+        {
+            g2.drawImage(gridLocked, 36, 241, 401,
+                    51,
+                    null);
         }
     }
 

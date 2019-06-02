@@ -155,6 +155,8 @@ public class Tile
         if (this.isEmpty())
         {
             this.setPower((int) (1 + Math.random() * 2));
+            /** To test the win screen: */
+//            this.setPower(10);
             return this.getPower();
         }
         else { return 0; }
@@ -217,7 +219,17 @@ public class Tile
     {
         if (!isEmpty())
         {
-            g.drawImage(myTilesImage[this.getPower()], x, y, 50, 50, null);
+            if (getPower() < 14)
+            {
+                g.drawImage(myTilesImage[this.getPower()], x, y, 50, 50, null);
+            }
+            else
+            {
+                g.setFont(new Font("PT Sans Caption", Font.BOLD, 11));
+                g.drawString(Integer.toString((int) Math.pow(2,
+                        this.getPower())), x + 7,
+                        y + 30);
+            }
         }
     }
 

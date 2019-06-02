@@ -427,6 +427,49 @@ public class Grid
         }
     }
 
+    public boolean hasWon()
+    {
+        for (Tile t : getTiles())
+        {
+            if (t.getPower() == 11) { return true; }
+        }
+        return false;
+    }
+
+    public boolean gridLocked()
+    {
+        if (getEmpty().size() != 0) { return false; }
+        for (int stack = 0; stack < myGrid.length; stack++)
+        {
+            for (int row = 0; row < myGrid[0].length; row++)
+            {
+                for (int col = 0; col < myGrid[0][0].length; col++)
+                {
+                    if (stack + 1 < myGrid.length)
+                    {
+                        if (myGrid[stack][row][col].getPower()
+                                == myGrid[stack + 1][row][col].getPower())
+                        { return false; }
+                    }
+                    if (row + 1 < myGrid[0].length)
+                    {
+                        if (myGrid[stack][row][col].getPower()
+                                == myGrid[stack][row + 1][col].getPower())
+                        { return false; }
+                    }
+                    if (col + 1 < myGrid[0][0].length)
+                    {
+                        if (myGrid[stack][row][col].getPower()
+                                == myGrid[stack][row][col + 1].getPower())
+                        { return false; }
+                    }
+                }
+            }
+        }
+//        System.out.println("*** GRIDLOCKED! ");
+        return true;
+    }
+
 
     public static void main(String[] args)
     {

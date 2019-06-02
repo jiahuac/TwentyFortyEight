@@ -101,6 +101,7 @@ public class GameApp {
     /** Resets the game and clears the board */
     public void reset()
     {
+        myGameScreen.resetWin();
         gameGrid.rebuildGrid();
     }
 

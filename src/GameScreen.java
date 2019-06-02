@@ -37,6 +37,20 @@ public class GameScreen extends JPanel {
     private boolean scoreHover;
     private boolean hoverTooltip = true;
 
+    private BufferedImage winBackground;
+    private boolean winScreen = true;
+
+    private ImageButton winContinueButton;
+    private boolean winContinueHover;
+
+    private ImageButton winMenuButton;
+    private boolean winMenuHover;
+
+    private BufferedImage loseBackground;
+
+    private ImageButton loseMenuButton;
+    private boolean loseMenuHover;
+
     private static BufferedImage myBackground;
     private static BufferedImage myTooltip;
     private static BufferedImage myScoreTooltip;
@@ -65,6 +79,15 @@ public class GameScreen extends JPanel {
                 ".png", "/screens/GamePauseHover.png");
         scoreButton = new ImageButton(455, 24, 200, 38, "/screens/ScoreButton" +
                 ".png", "/screens/ScoreHover.png");
+
+        winContinueButton = new ImageButton(252, 193, 138, 38, "/screens" +
+                "/WinContinueButton.png", "/screens/WinContinueHover.png");
+        winMenuButton = new ImageButton(413, 193, 104, 38, "/screens" +
+                "/MenuButton.png", "/screens/MenuHover.png");
+
+        loseMenuButton = new ImageButton(335, 193, 104, 38, "/screens" +
+                "/MenuButton.png", "/screens/MenuHover.png");
+
         try {
             InputStream is = getClass().getResourceAsStream("/screens" +
                     "/GameScreen.png");
@@ -75,6 +98,12 @@ public class GameScreen extends JPanel {
             is = getClass().getResourceAsStream("/screens" +
                     "/ScoreTooltip.png");
             myScoreTooltip = ImageIO.read(is);
+            is = getClass().getResourceAsStream("/screens" +
+                    "/WinPrompt.png");
+            winBackground = ImageIO.read(is);
+            is = getClass().getResourceAsStream("/screens" +
+                    "/LosePrompt.png");
+            loseBackground = ImageIO.read(is);
         } catch (IOException ioe) {
             System.out.println("InputStream ERROR");
         }
@@ -128,6 +157,28 @@ public class GameScreen extends JPanel {
             g2.drawString("Hover over me to see an explanation of scores", 463,
                     74);
         }
+
+        if (winScreen && myGrid.hasWon())
+        {
+            g2.drawImage(winBackground, -1, 0, GameApp.WIDTH,
+                    GameApp.HEIGHT - 20,
+                    null);
+            winContinueButton.draw(g2, winContinueHover);
+            winMenuButton.draw(g2, winMenuHover);
+        }
+
+        if (myGrid.gridLocked())
+        {
+            g2.drawImage(loseBackground, -1, 0, GameApp.WIDTH,
+                    GameApp.HEIGHT - 20,
+                    null);
+            loseMenuButton.draw(g2, loseMenuHover);
+        }
+    }
+
+    public void resetWin()
+    {
+        winScreen = true;
     }
 
     private class FieldUpdater extends Thread {
@@ -149,24 +200,48 @@ public class GameScreen extends JPanel {
         }
 
         public void mouseMoved(MouseEvent e) {
-
-            if (remindButton.doesContain(e)) {
-                remindHover = true;
-                pauseHover = false;
-                scoreHover = false;
-            } else if (pauseButton.doesContain(e)) {
-                remindHover = false;
-                pauseHover = true;
-                scoreHover = false;
-            } else if (scoreButton.doesContain(e))
+            if (winScreen && myGrid.hasWon())
             {
-                hoverTooltip = false;
-                remindHover = false;
-                pauseHover = false;
-                scoreHover = true;
+                resetHover();
+                if (winContinueButton.doesContain(e)) {
+                    winContinueHover = true;
+                    winMenuHover = false;
+                } else if (winMenuButton.doesContain(e)) {
+                    winContinueHover = false;
+                    winMenuHover = true;
+                } else {
+                    winContinueHover = false;
+                    winMenuHover = false;
+                }
+            }
+            else if (myGrid.gridLocked())
+            {
+                if (loseMenuButton.doesContain(e))
+                {
+                    loseMenuHover = true;
+                }
+                else
+                {
+                    loseMenuHover = false;
+                }
             }
             else {
-                resetHover();
+                if (remindButton.doesContain(e)) {
+                    remindHover = true;
+                    pauseHover = false;
+                    scoreHover = false;
+                } else if (pauseButton.doesContain(e)) {
+                    remindHover = false;
+                    pauseHover = true;
+                    scoreHover = false;
+                } else if (scoreButton.doesContain(e)) {
+                    hoverTooltip = false;
+                    remindHover = false;
+                    pauseHover = false;
+                    scoreHover = true;
+                } else {
+                    resetHover();
+                }
             }
         }
     }
@@ -182,10 +257,34 @@ public class GameScreen extends JPanel {
     {
         public void mousePressed(MouseEvent e)
         {
-            if (pauseButton.doesContain(e))
+            if (winScreen && myGrid.hasWon())
             {
-                resetHover();
-                myApp.loadPauseScreen();
+                if (winContinueButton.doesContain(e))
+                {
+                    winScreen = false;
+                }
+                else if (winMenuButton.doesContain(e))
+                {
+                    winContinueHover = false;
+                    winMenuHover = false;
+                    myApp.loadTitleScreen();
+                }
+            }
+            else if (myGrid.gridLocked())
+            {
+                if (loseMenuButton.doesContain(e))
+                {
+                    loseMenuHover = false;
+                    myApp.loadTitleScreen();
+                }
+            }
+            else
+            {
+                if (pauseButton.doesContain(e))
+                {
+                    resetHover();
+                    myApp.loadPauseScreen();
+                }
             }
         }
 

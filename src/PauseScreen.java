@@ -34,10 +34,10 @@ public class PauseScreen extends JPanel
         this.addMouseListener(new MyButtonListener());
         this.addMouseMotionListener(new MyHoverListener());
 
-        resetButton = new ImageButton(302, 223, 166, 45, "/screens" +
+        resetButton = new ImageButton(302, 233, 166, 45, "/screens" +
                 "/PauseResetButton.png", "/screens/PauseResetHover.png");
 
-        resumeButton = new ImageButton(274, 172, 218, 24, "/screens" +
+        resumeButton = new ImageButton(274, 182, 218, 24, "/screens" +
                 "/PauseResumeButton.png", "/screens/PauseResumeHover.png");
 
         try
