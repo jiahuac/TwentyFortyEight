@@ -2,55 +2,53 @@ import java.awt.*;
 import javax.swing.*;
 
 /**
- * GameApp class for 3D-2048 game
- * Runs the app for 2048 game
- *
- * @author Jiahua Chen
- * @version Final-1.1 06.02.2019 8:00pm
- *
- * COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved.
- */
+ GameApp class for 3D-2048 game
+ Runs the app for 2048 game
+ @author Jiahua Chen
+ @version Final-1.2 06.03.2019 12:00pm
+ 
+ COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved. */
 public class GameApp
 {
 	
-	/**
-	 * width of the screen
-	 */
+	/** width of the screen */
 	public static final int WIDTH = 770;
 	
-	/**
-	 * height of the screen
-	 */
+	/** height of the screen */
 	public static final int HEIGHT = 390;
 	
-	/**
-	 * the window of the app
-	 */
+	/** the window of the app */
 	private JPanel myPanel;
 	
-	/**
-	 * Names of the title screen
-	 */
+	/** name of title screen */
 	private static final String TITLE = "Title";
+	
+	/** name of game screen */
 	private static final String GAME = "Game";
+	
+	/** name of instruction screen */
 	private static final String INSTRUCTION = "Instruction";
+	
+	/** name of pause screen */
 	private static final String PAUSE = "Pause";
 	
-	/**
-	 * the screens of the app
-	 */
+	/** the game screen of the app */
 	private GameScreen myGameScreen;
+	
+	/** the title screen of the app */
 	private TitleScreen myTitleScreen;
+	
+	/** the instruction screen of the app */
 	private InstructionScreen myInstructionScreen;
+	
+	/** the pause screen of the app */
 	private PauseScreen myPauseScreen;
 	
-	/**
-	 * Grid object
-	 */
+	/** Grid object */
 	private Grid gameGrid;
 	
 	/**
-	 * Default constructor, creates a new GameApp
+	 Default constructor, creates a new GameApp
 	 */
 	public GameApp()
 	{
@@ -62,7 +60,7 @@ public class GameApp
 	}
 	
 	/**
-	 * Runs the GameApp, this is the main code that runs the game
+	 Runs the GameApp, this is the main code that runs the game
 	 */
 	public void run()
 	{
@@ -89,7 +87,7 @@ public class GameApp
 	}
 	
 	/**
-	 * Changes the screen to the GameScreen
+	 Changes the screen to the GameScreen
 	 */
 	public void loadGameScreen()
 	{
@@ -99,7 +97,7 @@ public class GameApp
 	}
 	
 	/**
-	 * Changes the screen to the InstructionScreen
+	 Changes the screen to the InstructionScreen
 	 */
 	public void loadInstructionScreen()
 	{
@@ -109,7 +107,7 @@ public class GameApp
 	}
 	
 	/**
-	 * Changes the screen to the TitleScreen
+	 Changes the screen to the TitleScreen
 	 */
 	public void loadTitleScreen()
 	{
@@ -120,7 +118,7 @@ public class GameApp
 	}
 	
 	/**
-	 * Resets the game and clears the board
+	 Resets the game and clears the board
 	 */
 	public void reset()
 	{
@@ -129,7 +127,7 @@ public class GameApp
 	}
 	
 	/**
-	 * Loads PauseScreen
+	 Loads PauseScreen
 	 */
 	public void loadPauseScreen()
 	{
@@ -139,8 +137,8 @@ public class GameApp
 	}
 	
 	/**
-	 * Main Code, runs the game
-	 * @param args Java main args
+	 Main Code, runs the game
+	 @param args Java main args
 	 */
 	public static void main(String[] args)
 	{
