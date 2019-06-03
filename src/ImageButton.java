@@ -10,6 +10,8 @@ import javax.imageio.*;
  *
  * @author Jiahua Chen
  * @version Final-1.0 06.02.2019 2:00pm
+ *
+ * COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved.
  */
 public class ImageButton
 {
@@ -17,7 +19,10 @@ public class ImageButton
 	/**
 	 * x coord, y coord, width, and height of button
 	 */
-	private int x, y, w, h;
+	private int x;
+	private int y;
+	private int w;
+	private int h;
 	
 	/**
 	 * Images of button, not hovering and hovering
