@@ -1,5 +1,4 @@
 import java.awt.*;
-import java.awt.geom.*;
 import javax.swing.*;
 import java.awt.event.*;
 import java.io.*;
@@ -12,6 +11,8 @@ import javax.imageio.*;
  *
  * @author Jiahua Chen
  * @version Final-1.0 06.02.2019 2:00pm
+ *
+ * COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved.
  */
 
 public class GameScreen extends JPanel
@@ -81,7 +82,7 @@ public class GameScreen extends JPanel
 	/**
 	 * Tile Color
 	 */
-	private static final Color tileGrey = new Color(119, 110, 101);
+	private static final Color TILE_GREY = new Color(119, 110, 101);
 	
 	
 	/**
@@ -94,7 +95,7 @@ public class GameScreen extends JPanel
 	{
 		myGrid = grid;
 		myApp = app;
-		this.addKeyListener(new GameKeyHandler(myGrid, this));
+		this.addKeyListener(new GameKeyHandler(myGrid));
 		this.setFocusable(true);
 		this.requestFocusInWindow();
 		this.addMouseListener(new MyButtonListener());
@@ -174,7 +175,7 @@ public class GameScreen extends JPanel
 		}
 		
 		g2.setFont(new Font("PT Sans Caption", Font.BOLD, 17));
-		g2.setColor(tileGrey);
+		g2.setColor(TILE_GREY);
 		if (scoreHover)
 		{
 			g2.setColor(Color.BLACK);
@@ -230,7 +231,7 @@ public class GameScreen extends JPanel
 				}
 				catch (InterruptedException ie)
 				{
-				
+					System.out.println("FieldUpdater InterruptedException");
 				}
 			}
 		}
