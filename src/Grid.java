@@ -7,6 +7,8 @@ import java.util.ArrayList;
  *
  * @author Jiahua Chen
  * @version Final-1.0 06.02.2019 2:00pm
+ *
+ * COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved.
  */
 
 public class Grid
@@ -287,36 +289,18 @@ public class Grid
 		
 		if (dir.stack != 0)
 		{
-			if (dir.stack == 1)
-			{
-				maxStack = 1;
-			}
-			else
-			{
-				startStack = maxStack - 1;
-			}
+			if (dir.stack == 1) { maxStack = 1; }
+			else { startStack = maxStack - 1; }
 		}
 		if (dir.row != 0)
 		{
-			if (dir.row == 1)
-			{
-				maxRow = 1;
-			}
-			else
-			{
-				startRow = maxRow - 1;
-			}
+			if (dir.row == 1) { maxRow = 1; }
+			else { startRow = maxRow - 1; }
 		}
 		if (dir.col != 0)
 		{
-			if (dir.col == 1)
-			{
-				maxCol = 1;
-			}
-			else
-			{
-				startCol = maxCol - 1;
-			}
+			if (dir.col == 1) { maxCol = 1; }
+			else { startCol = maxCol - 1; }
 		}
 		
 		for (int stack = startStack; stack < maxStack; stack++)
@@ -333,6 +317,7 @@ public class Grid
 		movedAll();
 		return ret;
 	}
+	
 	
 	/**
 	 * resets the 'moved' status of every tile
@@ -391,36 +376,18 @@ public class Grid
 		
 		if (dir.stack != 0)
 		{
-			if (dir.stack == 1)
-			{
-				maxStack = 1;
-			}
-			else
-			{
-				startStack = maxStack - 1;
-			}
+			if (dir.stack == 1) { maxStack = 1; }
+			else { startStack = maxStack - 1; }
 		}
 		if (dir.row != 0)
 		{
-			if (dir.row == 1)
-			{
-				maxRow = 1;
-			}
-			else
-			{
-				startRow = maxRow - 1;
-			}
+			if (dir.row == 1) { maxRow = 1; }
+			else { startRow = maxRow - 1; }
 		}
 		if (dir.col != 0)
 		{
-			if (dir.col == 1)
-			{
-				maxCol = 1;
-			}
-			else
-			{
-				startCol = maxCol - 1;
-			}
+			if (dir.col == 1) { maxCol = 1; }
+			else { startCol = maxCol - 1; }
 		}
 		
 		for (int stack = startStack; stack < maxStack; stack++)
