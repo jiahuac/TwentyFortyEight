@@ -5,46 +5,41 @@ import java.io.*;
 import javax.imageio.*;
 
 /**
- * Tile class for 3D-2048 game
- * Individual Tile objects for the game grid
- *
- * @author Jiahua Chen
- * @version Final-1.1 06.02.2019 8:00pm
- *
- * COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved.
- */
+ Tile class for 3D-2048 game
+ Individual Tile objects for the game grid
+ @author Jiahua Chen
+ @version Final-1.2 06.03.2019 12:00pm
+ 
+ COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved. */
 
 public class Tile
 {
-	/**
-	 * power of the individual tiles, -1 if empty
-	 */
+	/** power of the individual tiles, -1 if empty */
 	private int power;
 	
-	/**
-	 * location of the individual tile, using a Loc object
-	 */
+	/** location of the individual tile, using a Loc object */
 	private Loc loc;
+	
+	/** new location of tile (to animate to) */
 	private Loc newLoc;
 	
+	/** step progression of the animation */
 	private int drawStep;
 	
-	/**
-	 * power of empty tile
-	 */
+	/** power of empty tile */
 	private static final int EMPTY_POWER = 0;
 	
-	/**
-	 * move state of a tile
-	 */
+	/** move state of a tile */
 	private boolean moved;
 	
+	/** array of tile images */
 	public static BufferedImage[] myTilesImage;
 	
+	/** are images loaded, so images are loaded only once for all tiles */
 	private static boolean imagesLoaded = false;
 	
 	/**
-	 * default constructor
+	 default constructor
 	 */
 	public Tile()
 	{
@@ -52,8 +47,8 @@ public class Tile
 	}
 	
 	/**
-	 * constructs an empty tile at location
-	 * @param loc location tile is being constructed at
+	 constructs an empty tile at location
+	 @param loc location tile is being constructed at
 	 */
 	public Tile(Loc loc)
 	{
@@ -61,9 +56,9 @@ public class Tile
 	}
 	
 	/**
-	 * constructs a tile with power pow at location
-	 * @param pow power of tile
-	 * @param loc location being constructed at
+	 constructs a tile with power pow at location
+	 @param pow power of tile
+	 @param loc location being constructed at
 	 */
 	public Tile(int pow, Loc loc)
 	{
@@ -90,10 +85,9 @@ public class Tile
 	}
 	
 	/**
-	 * attempts to set the power to pow
-	 *
-	 * @param pow power to set to
-	 * @return true if successful; else false (or if pow are equal)
+	 attempts to set the power to pow
+	 @param pow power to set to
+	 @return true if successful; else false (or if pow are equal)
 	 */
 	public boolean setPower(int pow)
 	{
@@ -109,9 +103,8 @@ public class Tile
 	}
 	
 	/**
-	 * increments the power of the tile
-	 *
-	 * @return new power of the tile
+	 increments the power of the tile
+	 @return new power of the tile
 	 */
 	public int incrementPower()
 	{
@@ -120,9 +113,8 @@ public class Tile
 	}
 	
 	/**
-	 * attempts to get the power of the tile
-	 *
-	 * @return power of the tile
+	 attempts to get the power of the tile
+	 @return power of the tile
 	 */
 	public int getPower()
 	{
@@ -130,9 +122,8 @@ public class Tile
 	}
 	
 	/**
-	 * Sets both locs of tile to newLoc
-	 *
-	 * @param newLoc new Location of tile, after animation is over
+	 Sets both locs of tile to newLoc
+	 @param newLoc new Location of tile, after animation is over
 	 */
 	public void setLoc(Loc newLoc)
 	{
@@ -141,10 +132,9 @@ public class Tile
 	}
 	
 	/**
-	 * Sets new Loc of tile to newLoc, allows for animation, tile remembers
-	 * old loc and animates from old loc to new loc
-	 *
-	 * @param newLoc new Location of tile
+	 Sets new Loc of tile to newLoc, allows for animation, tile remembers
+	 old loc and animates from old loc to new loc
+	 @param newLoc new Location of tile
 	 */
 	public void setNewLoc(Loc newLoc)
 	{
@@ -152,9 +142,8 @@ public class Tile
 	}
 	
 	/**
-	 * attempts to get the location of the tile
-	 *
-	 * @return location of the tile
+	 attempts to get the location of the tile
+	 @return location of the tile
 	 */
 	public Loc getLoc()
 	{
@@ -162,9 +151,8 @@ public class Tile
 	}
 	
 	/**
-	 * toString method of the Tile
-	 *
-	 * @return integer value of tile (2^power), or " " if empty
+	 toString method of the Tile
+	 @return integer value of tile (2^power), or " " if empty
 	 */
 	public String toString()
 	{
@@ -179,9 +167,8 @@ public class Tile
 	}
 	
 	/**
-	 * checks if tile is empty
-	 *
-	 * @return true if tile is empty, else false
+	 checks if tile is empty
+	 @return true if tile is empty, else false
 	 */
 	public boolean isEmpty()
 	{
@@ -189,9 +176,8 @@ public class Tile
 	}
 	
 	/**
-	 * tries to initiate a new tile at an empty tile
-	 *
-	 * @return power of new tile, 0 if empty
+	 tries to initiate a new tile at an empty tile
+	 @return power of new tile, 0 if empty
 	 */
 	public int initiate()
 	{
@@ -209,9 +195,8 @@ public class Tile
 	}
 	
 	/**
-	 * Checks if tile can be moved (if it's already been moved then cannot)
-	 *
-	 * @return NOT moved, so if the tile has been moved it returns false
+	 Checks if tile can be moved (if it's already been moved then cannot)
+	 @return NOT moved, so if the tile has been moved it returns false
 	 */
 	public boolean canMove()
 	{
@@ -219,7 +204,7 @@ public class Tile
 	}
 	
 	/**
-	 * Tells tile that the tile has been moved
+	 Tells tile that the tile has been moved
 	 */
 	public void moved()
 	{
@@ -227,7 +212,7 @@ public class Tile
 	}
 	
 	/**
-	 * Resets the moved state of tile
+	 Resets the moved state of tile
 	 */
 	public void resetMoved()
 	{
@@ -235,9 +220,8 @@ public class Tile
 	}
 	
 	/**
-	 * Draws the tile object on the board
-	 *
-	 * @param g graphics obj passed down
+	 Draws the tile object on the board
+	 @param g graphics obj passed down
 	 */
 	public void drawMe(Graphics2D g)
 	{
@@ -267,10 +251,9 @@ public class Tile
 	}
 	
 	/**
-	 * Gets the screen Y coord from board relative position
-	 *
-	 * @param l Loc of tile
-	 * @return Y position on screen/graphics of tile
+	 Gets the screen Y coord from board relative position
+	 @param l Loc of tile
+	 @return Y position on screen/graphics of tile
 	 */
 	public static int getYCoord(Loc l)
 	{
@@ -278,10 +261,9 @@ public class Tile
 	}
 	
 	/**
-	 * Gets the screen X coord from board relative position
-	 *
-	 * @param l Loc of tile
-	 * @return X position on screen/graphics of tile
+	 Gets the screen X coord from board relative position
+	 @param l Loc of tile
+	 @return X position on screen/graphics of tile
 	 */
 	public static int getXCoord(Loc l)
 	{
@@ -289,11 +271,10 @@ public class Tile
 	}
 	
 	/**
-	 * Draws tile at specific location on screen
-	 *
-	 * @param g graphics obj passed down
-	 * @param x X coord on screen to draw
-	 * @param y Y coord on screen to draw
+	 Draws tile at specific location on screen
+	 @param g graphics obj passed down
+	 @param x X coord on screen to draw
+	 @param y Y coord on screen to draw
 	 */
 	private void drawTile(Graphics2D g, int x, int y)
 	{
@@ -317,10 +298,18 @@ public class Tile
 		START of copied code to make BufferedImage with rounded corners
 		
 		source:
-		https://stackoverflow.com/questions/7603400/how-to-make-a-rounded-corner-image-in-java
+		https://stackoverflow.com/questions/7603400/
+		how-to-make-a-rounded-corner-image-in-java
+	 */
+	
+	/**
+	 adds an rounded corner to a BufferedImage
+	 @param image original image
+	 @param cornerRadius radius of the corner of new image
+	 @return image with rounded corner
 	 */
 	private static BufferedImage makeRoundedCorner(BufferedImage image,
-	                                         int cornerRadius)
+	                                               int cornerRadius)
 	{
 		int w = image.getWidth();
 		int h = image.getHeight();

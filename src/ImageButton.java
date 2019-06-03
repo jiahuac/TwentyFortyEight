@@ -5,40 +5,41 @@ import java.awt.image.*;
 import javax.imageio.*;
 
 /**
- * Image Button class for 3D-2048 game
- * Used for image buttons for 2048 game
- *
- * @author Jiahua Chen
- * @version Final-1.0 06.02.2019 2:00pm
- *
- * COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved.
- */
+ Image Button class for 3D-2048 game
+ Used for image buttons for 2048 game
+ @author Jiahua Chen
+ @version Final-1.2 06.03.2019 12:00pm
+ 
+ COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved. */
 public class ImageButton
 {
 	
-	/**
-	 * x coord, y coord, width, and height of button
-	 */
+	/** x coord of button */
 	private int x;
+	
+	/** y coord of button */
 	private int y;
+	
+	/** width of button */
 	private int w;
+	
+	/** height of button */
 	private int h;
 	
-	/**
-	 * Images of button, not hovering and hovering
-	 */
+	/** image of button, not hovering */
 	private BufferedImage buttonImage;
+	
+	/** image of button, hovering */
 	private BufferedImage buttonImageHover;
 	
 	/**
-	 * constructor for ImageButton
-	 *
-	 * @param x     x pos of button
-	 * @param y     y pos of button
-	 * @param w     width of button
-	 * @param h     height of button
-	 * @param image not hovering image of button
-	 * @param hover hovering image of button
+	 constructor for ImageButton
+	 @param x x pos of button
+	 @param y y pos of button
+	 @param w width of button
+	 @param h height of button
+	 @param image not hovering image of button
+	 @param hover hovering image of button
 	 */
 	public ImageButton(int x, int y, int w, int h, String image, String hover)
 	{
@@ -60,9 +61,8 @@ public class ImageButton
 	}
 	
 	/**
-	 * Draws a button at the button location
-	 *
-	 * @param g graphics object passed down from Screen
+	 Draws a button at the button location
+	 @param g graphics object passed down from Screen
 	 */
 	public void drawButton(Graphics2D g)
 	{
@@ -70,9 +70,8 @@ public class ImageButton
 	}
 	
 	/**
-	 * Draws the button being hovered at button location
-	 *
-	 * @param g graphics object passed down from Screen
+	 Draws the button being hovered at button location
+	 @param g graphics object passed down from Screen
 	 */
 	public void drawHover(Graphics2D g)
 	{
@@ -80,10 +79,9 @@ public class ImageButton
 	}
 	
 	/**
-	 * Draws the button, and automatically adjusts based on hovering or not
-	 *
-	 * @param g     graphics object passed down from Screen
-	 * @param hover is the mouse hovering over the button or not
+	 Draws the button, and automatically adjusts based on hovering or not
+	 @param g graphics object passed down from Screen
+	 @param hover is the mouse hovering over the button or not
 	 */
 	public void draw(Graphics2D g, boolean hover)
 	{
@@ -98,10 +96,9 @@ public class ImageButton
 	}
 	
 	/**
-	 * Checks if a MouseEvent is contained within the button
-	 *
-	 * @param e MouseEvent passed down from MouseListener
-	 * @return true if mouse is in button, else false
+	 Checks if a MouseEvent is contained within the button
+	 @param e MouseEvent passed down from MouseListener
+	 @return true if mouse is in button, else false
 	 */
 	public boolean doesContain(MouseEvent e)
 	{

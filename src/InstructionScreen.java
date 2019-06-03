@@ -6,49 +6,47 @@ import java.awt.image.*;
 import javax.imageio.*;
 
 /**
- * Instructions Screen class for 3D-2048 game
- * Instructions Screen for 2048 game
- *
- * @author Jiahua Chen
- * @version Final-1.1 06.02.2019 8:00pm
- *
- * COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved.
- */
+ Instructions Screen class for 3D-2048 game
+ Instructions Screen for 2048 game
+ @author Jiahua Chen
+ @version Final-1.2 06.03.2019 12:00pm
+ 
+ COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved. */
 public class InstructionScreen extends JPanel
 {
-	/**
-	 * Background of InstructionScreen
-	 */
+	/** Background of InstructionScreen */
 	private static BufferedImage myBackground;
-	/**
-	 * GridLocked prompt
-	 */
+	
+	/** GridLocked prompt */
 	private static BufferedImage gridLocked;
 	
-	/**
-	 * Buttons in Instructions Screen
-	 */
+	/** reset button */
 	private ImageButton resetButton;
+	
+	/** mouse hovering over reset button */
 	private boolean resetHover;
+	
+	/** play button */
 	private ImageButton playButton;
+	
+	/** mouse hovering over play button */
 	private boolean playHover;
+	
+	/** menu button */
 	private ImageButton menuButton;
+	
+	/** mouse hovering over menu button */
 	private boolean menuHover;
 	
-	/**
-	 * App of the game
-	 */
+	/** App of the game */
 	private GameApp myApp;
 	
-	/**
-	 * smaller grid for Instruction screen
-	 */
+	/** smaller grid for Instruction screen */
 	private Grid myGrid;
 	
 	/**
-	 * Constructs an InstructionScreen
-	 *
-	 * @param app myApp passed down from app class
+	 Constructs an InstructionScreen
+	 @param app myApp passed down from app class
 	 */
 	public InstructionScreen(GameApp app)
 	{
@@ -88,8 +86,8 @@ public class InstructionScreen extends JPanel
 	}
 	
 	/**
-	 * Painting screen
-	 * @param g graphics obj passed down
+	 Painting screen
+	 @param g graphics obj passed down
 	 */
 	public void paintComponent(Graphics g)
 	{
@@ -116,12 +114,23 @@ public class InstructionScreen extends JPanel
 		}
 	}
 	
+	/**
+	 Listens for mouse hovering over buttons.
+	 */
 	private class MyHoverListener implements MouseMotionListener
 	{
+		/**
+		 Does nothing when mouse is dragged
+		 @param e MouseEvent
+		 */
 		public void mouseDragged(MouseEvent e)
 		{
 		}
 		
+		/**
+		 Actions when mouse if moved, checks if mouse is in the buttons
+		 @param e MouseEvent
+		 */
 		public void mouseMoved(MouseEvent e)
 		{
 			
@@ -151,7 +160,7 @@ public class InstructionScreen extends JPanel
 	}
 	
 	/**
-	 * Resets the hovering status of button
+	 Resets the hovering status of button
 	 */
 	public void resetHover()
 	{
@@ -160,8 +169,15 @@ public class InstructionScreen extends JPanel
 		menuHover = false;
 	}
 	
+	/**
+	 Listens for mouse clicking on buttons
+	 */
 	private class MyButtonListener implements MouseListener
 	{
+		/**
+		 Checks for when mouse is pressed, changes screen when it is.
+		 @param e MouseEvent
+		 */
 		public void mousePressed(MouseEvent e)
 		{
 			if (resetButton.doesContain(e))
@@ -180,29 +196,51 @@ public class InstructionScreen extends JPanel
 			}
 		}
 		
+		/**
+		 Does nothing when mouse is released
+		 @param e MouseEvent
+		 */
 		public void mouseReleased(MouseEvent e)
 		{
 		
 		}
 		
+		/**
+		 Does nothing when mouse is clicked (not pressed)
+		 @param e MouseEvent
+		 */
 		public void mouseClicked(MouseEvent e)
 		{
 		
 		}
 		
+		/**
+		 Does nothing when mouse enters screen
+		 @param e MouseEvent
+		 */
 		public void mouseEntered(MouseEvent e)
 		{
 		
 		}
 		
+		/**
+		 Does nothing when mouse exits screen
+		 @param e MouseEvent
+		 */
 		public void mouseExited(MouseEvent e)
 		{
 		
 		}
 	}
 	
+	/**
+	 FieldUpdater updating the screen every frame.
+	 */
 	private class FieldUpdater extends Thread
 	{
+		/**
+		 Runs the FieldUpdater Thread
+		 */
 		public void run()
 		{
 			while (true)
@@ -214,7 +252,7 @@ public class InstructionScreen extends JPanel
 				}
 				catch (InterruptedException ie)
 				{
-				
+					System.out.println("FieldUpdater InterruptedException");
 				}
 			}
 		}

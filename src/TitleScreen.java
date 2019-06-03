@@ -6,42 +6,35 @@ import java.awt.image.*;
 import javax.imageio.*;
 
 /**
- * Title Screen class for 3D-2048 game
- * Introductory Title Screen for 2048 game
- *
- * @author Jiahua Chen
- * @version Final-1.1 06.02.2019 8:00pm
- *
- * COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved.
- */
+ Title Screen class for 3D-2048 game
+ Introductory Title Screen for 2048 game
+ @author Jiahua Chen
+ @version Final-1.2 06.03.2019 12:00pm
+ 
+ COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved. */
 public class TitleScreen extends JPanel
 {
-	/**
-	 * GameApp obj
-	 */
+	/** GameApp obj */
 	private GameApp myApp;
 	
-	/**
-	 * Button to start game
-	 */
+	/** Button to start game */
 	private ImageButton playButton;
+	
+	/** is mouse hovering over play button */
 	private boolean playButtonHover;
 	
-	/**
-	 * Button to go to instructions
-	 */
+	/** Button to go to instructions */
 	private ImageButton instructionsButton;
+	
+	/** is mouse hovering over instructions button */
 	private boolean instructionsButtonHover;
 	
-	/**
-	 * Background image (tiles)
-	 */
+	/** Background image (the tiles) */
 	private static BufferedImage myBackground;
 	
 	/**
-	 * constructs a new TitleScreen
-	 *
-	 * @param app GameApp object
+	 constructs a new TitleScreen
+	 @param app GameApp object
 	 */
 	public TitleScreen(GameApp app)
 	{
@@ -73,9 +66,8 @@ public class TitleScreen extends JPanel
 	}
 	
 	/**
-	 * Paints the title screen
-	 *
-	 * @param g graphics obj
+	 Paints the title screen
+	 @param g graphics obj
 	 */
 	public void paintComponent(Graphics g)
 	{
@@ -89,13 +81,23 @@ public class TitleScreen extends JPanel
 		instructionsButton.draw(g2, instructionsButtonHover);
 	}
 	
-	
+	/**
+	 Listens for mouse hovering over buttons.
+	 */
 	private class MyHoverListener implements MouseMotionListener
 	{
+		/**
+		 Does nothing when mouse is dragged
+		 @param e MouseEvent
+		 */
 		public void mouseDragged(MouseEvent e)
 		{
 		}
 		
+		/**
+		 Actions when mouse if moved, checks if mouse is in the buttons
+		 @param e MouseEvent
+		 */
 		public void mouseMoved(MouseEvent e)
 		{
 			if (playButton.doesContain(e))
@@ -119,7 +121,7 @@ public class TitleScreen extends JPanel
 	}
 	
 	/**
-	 * resets the hovering state (for when mouse is outside buttons)
+	 resets the hovering state (for when mouse is outside buttons)
 	 */
 	private void resetHover()
 	{
@@ -127,8 +129,15 @@ public class TitleScreen extends JPanel
 		instructionsButtonHover = false;
 	}
 	
+	/**
+	 Listens for mouse clicking on buttons
+	 */
 	private class MyButtonListener implements MouseListener
 	{
+		/**
+		 Checks for when mouse is pressed, changes screen when it is.
+		 @param e MouseEvent
+		 */
 		public void mousePressed(MouseEvent e)
 		{
 			if (playButton.doesContain(e))
@@ -142,21 +151,37 @@ public class TitleScreen extends JPanel
 			}
 		}
 		
+		/**
+		 Does nothing when mouse is released
+		 @param e MouseEvent
+		 */
 		public void mouseReleased(MouseEvent e)
 		{
 		
 		}
 		
+		/**
+		 Does nothing when mouse is clicked (not pressed)
+		 @param e MouseEvent
+		 */
 		public void mouseClicked(MouseEvent e)
 		{
 		
 		}
 		
+		/**
+		 Does nothing when mouse enters screen
+		 @param e MouseEvent
+		 */
 		public void mouseEntered(MouseEvent e)
 		{
 		
 		}
 		
+		/**
+		 Does nothing when mouse exits screen
+		 @param e MouseEvent
+		 */
 		public void mouseExited(MouseEvent e)
 		{
 		

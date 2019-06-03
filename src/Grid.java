@@ -2,36 +2,27 @@ import java.awt.*;
 import java.util.ArrayList;
 
 /**
- * Grid class for 3D-2048 game
- * Basic data-structure of tile objects
- *
- * @author Jiahua Chen
- * @version Final-1.1 06.02.2019 8:00pm
- *
- * COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved.
- */
+ Grid class for 3D-2048 game
+ Basic data-structure of tile objects
+ @author Jiahua Chen
+ @version Final-1.2 06.03.2019 12:00pm
+ 
+ COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved. */
 
 public class Grid
 {
-	/**
-	 * given maximum size of the game grid (dimensions)
-	 */
+	/** given maximum size of the game grid (dimensions) */
 	private int size;
 	
-	/**
-	 * myGrid object, consisting of 3d Tile object array
-	 */
+	/** myGrid object, consisting of 3d Tile object array */
 	private Tile[][][] myGrid;
 	
-	/**
-	 * Score
-	 */
+	/** Score of game */
 	private int score = 0;
 	
 	/**
-	 * gets score of grid
-	 *
-	 * @return score of grid
+	 gets score of grid
+	 @return score of grid
 	 */
 	public int getScore()
 	{
@@ -39,7 +30,7 @@ public class Grid
 	}
 	
 	/**
-	 * default constructor constructs a grid of MAX_SIZE
+	 default constructor constructs a grid of MAX_SIZE
 	 */
 	public Grid()
 	{
@@ -47,10 +38,9 @@ public class Grid
 	}
 	
 	/**
-	 * constructs a grid of dimensions/side length size
-	 * with all empty tiles
-	 *
-	 * @param dim Dimension of the grid.
+	 constructs a grid of dimensions/side length size
+	 with all empty tiles
+	 @param dim Dimension of the grid.
 	 */
 	public Grid(int dim)
 	{
@@ -60,7 +50,7 @@ public class Grid
 	}
 	
 	/**
-	 * Rebuilds the grid with new tiles
+	 Rebuilds the grid with new tiles
 	 */
 	public void rebuildGrid()
 	{
@@ -78,10 +68,9 @@ public class Grid
 	}
 	
 	/**
-	 * gets tile at target location
-	 *
-	 * @param target loc of target Tile
-	 * @return tile at location
+	 gets tile at target location
+	 @param target loc of target Tile
+	 @return tile at location
 	 */
 	public Tile getTile(Loc target)
 	{
@@ -96,11 +85,10 @@ public class Grid
 	}
 	
 	/**
-	 * sets a coordinate in the grid with power pow
-	 *
-	 * @param target loc of target Tile
-	 * @param pow    to set target Tile
-	 * @return if set was successful, i.e. if it changed the power at all
+	 sets a coordinate in the grid with power pow
+	 @param target loc of target Tile
+	 @param pow to set target Tile
+	 @return if set was successful, i.e. if it changed the power at all
 	 */
 	public boolean setTile(Loc target, int pow)
 	{
@@ -115,10 +103,9 @@ public class Grid
 	}
 	
 	/**
-	 * increments a tile at a given location
-	 *
-	 * @param target loc of target Tile
-	 * @return new power of target tile
+	 increments a tile at a given location
+	 @param target loc of target Tile
+	 @return new power of target tile
 	 */
 	public int incrementTile(Loc target)
 	{
@@ -126,9 +113,8 @@ public class Grid
 	}
 	
 	/**
-	 * prints the Grid
-	 *
-	 * @return String visual representation of grid
+	 prints the Grid
+	 @return String visual representation of grid
 	 */
 	public String toString()
 	{
@@ -149,9 +135,8 @@ public class Grid
 	}
 	
 	/**
-	 * checks if grid is fully filled
-	 *
-	 * @return true if filled, else false
+	 checks if grid is fully filled
+	 @return true if filled, else false
 	 */
 	public boolean isFilled()
 	{
@@ -159,10 +144,9 @@ public class Grid
 	}
 	
 	/**
-	 * attempts to insert a random tile at an empty location of an unknown grid,
-	 * checks if grid if fully filled first
-	 *
-	 * @return power of inserted new Tile, or 0 if grid is full
+	 attempts to insert a random tile at an empty location of an unknown grid,
+	 checks if grid if fully filled first
+	 @return power of inserted new Tile, or 0 if grid is full
 	 */
 	public int newTile()
 	{
@@ -176,9 +160,8 @@ public class Grid
 	}
 	
 	/**
-	 * finds all the empty tiles in the array
-	 *
-	 * @return array of all empty tiles
+	 finds all the empty tiles in the array
+	 @return array of all empty tiles
 	 */
 	public ArrayList<Loc> getEmpty()
 	{
@@ -200,12 +183,11 @@ public class Grid
 	}
 	
 	/**
-	 * tries to shift tile from loc1 to loc2
-	 * if (r2, c2, s2) is an empty tile
-	 *
-	 * @param loc1 origin loc of tile
-	 * @param loc2 trying to shift to loc
-	 * @return if it's shifted or not
+	 tries to shift tile from loc1 to loc2
+	 if (r2, c2, s2) is an empty tile
+	 @param loc1 origin loc of tile
+	 @param loc2 trying to shift to loc
+	 @return if it's shifted or not
 	 */
 	public boolean tryShift(Loc loc1, Loc loc2)
 	{
@@ -222,11 +204,10 @@ public class Grid
 	}
 	
 	/**
-	 * tries to combine loc1 tile and loc2 tile
-	 *
-	 * @param loc1 location of first tile
-	 * @param loc2 location of last tile
-	 * @return score if combined
+	 tries to combine loc1 tile and loc2 tile
+	 @param loc1 location of first tile
+	 @param loc2 location of last tile
+	 @return score if combined
 	 */
 	public int tryCombine(Loc loc1, Loc loc2)
 	{
@@ -245,12 +226,11 @@ public class Grid
 	}
 	
 	/**
-	 * tries to combine a whole stack
-	 *
-	 * @param start    the starting coordinate of the stack
-	 * @param dir      the direction that the stack is being combined in
-	 * @param numTimes the number of times to tryCombine
-	 * @return the score of the combination
+	 tries to combine a whole stack
+	 @param start the starting coordinate of the stack
+	 @param dir the direction that the stack is being combined in
+	 @param numTimes the number of times to tryCombine
+	 @return the score of the combination
 	 */
 	public int combineStack(Loc start, Loc dir, int numTimes)
 	{
@@ -271,10 +251,9 @@ public class Grid
 	}
 	
 	/**
-	 * Combining the whole grid in a certain direction
-	 *
-	 * @param dir the direction to combine in
-	 * @return the score of the combination
+	 Combining the whole grid in a certain direction
+	 @param dir the direction to combine in
+	 @return the score of the combination
 	 */
 	public int combine(Loc dir)
 	{
@@ -320,7 +299,7 @@ public class Grid
 	
 	
 	/**
-	 * resets the 'moved' status of every tile
+	 resets the 'moved' status of every tile
 	 */
 	public void movedAll()
 	{
@@ -337,11 +316,10 @@ public class Grid
 	}
 	
 	/**
-	 * Attempts to shift a stack
-	 *
-	 * @param start    the starting coordinate of a stack
-	 * @param dir      the direction to shift in
-	 * @param numTimes the number of times to tryShift
+	 Attempts to shift a stack
+	 @param start the starting coordinate of a stack
+	 @param dir the direction to shift in
+	 @param numTimes the number of times to tryShift
 	 */
 	public void shiftStack(Loc start, Loc dir, int numTimes)
 	{
@@ -361,9 +339,8 @@ public class Grid
 	}
 	
 	/**
-	 * Tries to shift the entire grid
-	 *
-	 * @param dir the direction to shift in
+	 Tries to shift the entire grid
+	 @param dir the direction to shift in
 	 */
 	public void shift(Loc dir)
 	{
@@ -403,7 +380,7 @@ public class Grid
 	}
 	
 	/**
-	 * Resets the location of all grid entries (Tiles)
+	 Resets the location of all grid entries (Tiles)
 	 */
 	public void resetLoc()
 	{
@@ -420,11 +397,10 @@ public class Grid
 	}
 	
 	/**
-	 * Makes a move in a certain direction, which involves trying to shift,
-	 * then trying to combine, and then shifting again.
-	 *
-	 * @param dir the direction to move in
-	 * @return the score added from combining
+	 Makes a move in a certain direction, which involves trying to shift,
+	 then trying to combine, and then shifting again.
+	 @param dir the direction to move in
+	 @return the score added from combining
 	 */
 	public int doMove(Loc dir)
 	{
@@ -436,9 +412,8 @@ public class Grid
 	}
 	
 	/**
-	 * Gets a list of all tiles
-	 *
-	 * @return ArrayList of all tiles
+	 Gets a list of all tiles
+	 @return ArrayList of all tiles
 	 */
 	public ArrayList<Tile> getTiles()
 	{
@@ -457,9 +432,8 @@ public class Grid
 	}
 	
 	/**
-	 * Draws an empty tile in the back
-	 *
-	 * @param g graphics object passed down from higher classes
+	 Draws an empty tile in the back
+	 @param g graphics object passed down from higher classes
 	 */
 	public void drawBoard(Graphics2D g)
 	{
@@ -479,9 +453,8 @@ public class Grid
 	}
 	
 	/**
-	 * Checks to see if user has won, if a tile is 2048
-	 *
-	 * @return true if grid contains winning tile, else false
+	 Checks to see if user has won, ie if a tile is 2048
+	 @return true if grid contains winning tile, else false
 	 */
 	public boolean hasWon()
 	{
@@ -496,9 +469,8 @@ public class Grid
 	}
 	
 	/**
-	 * Checks to see if grid is gridlocked
-	 *
-	 * @return true if gridlocked
+	 Checks to see if grid is gridlocked
+	 @return true if gridlocked
 	 */
 	public boolean gridLocked()
 	{

@@ -1,24 +1,24 @@
 /**
- * Location class for 3D-2048 game
- * Basic data-structure of locations/coordinates
- *
- * @author Jiahua Chen
- * @version Final-1.1 06.02.2019 8:00pm
- *
- * COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved.
- */
+ Location class for 3D-2048 game
+ Basic data-structure of locations/coordinates
+ @author Jiahua Chen
+ @version Final-1.2 06.03.2019 12:00pm
+ 
+ COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved. */
 
 public class Loc
 {
-	/**
-	 * Coords of Location
-	 */
+	/** stack coord of location */
 	public int stack;
+	
+	/** row coord of location */
 	public int row;
+	
+	/** col coord of location */
 	public int col;
 	
 	/**
-	 * Constructor for new location
+	 Constructor for new location
 	 */
 	public Loc()
 	{
@@ -26,11 +26,10 @@ public class Loc
 	}
 	
 	/**
-	 * Constructor for Loc at specific location
-	 *
-	 * @param stack stack of Loc
-	 * @param row   row of Loc
-	 * @param col   col of Loc
+	 Constructor for Loc at specific location
+	 @param stack stack of Loc
+	 @param row row of Loc
+	 @param col col of Loc
 	 */
 	public Loc(int stack, int row, int col)
 	{
@@ -40,10 +39,9 @@ public class Loc
 	}
 	
 	/**
-	 * Adds a Loc to this Loc
-	 *
-	 * @param summand Loc to add to this loc
-	 * @return the sum of two Locs
+	 Adds a Loc to this Loc
+	 @param summand Loc to add to this loc
+	 @return the sum of two Locs
 	 */
 	public Loc add(Loc summand)
 	{
@@ -52,19 +50,18 @@ public class Loc
 	}
 	
 	/**
-	 * Inverts this Loc
+	 Inverts this Loc
 	 */
 	public void invert()
 	{
-		stack = - stack;
-		row = - row;
-		col = - col;
+		stack = -stack;
+		row = -row;
+		col = -col;
 	}
 	
 	/**
-	 * Prints this loc to string
-	 *
-	 * @return string representation of this Loc
+	 Prints this loc to string
+	 @return string representation of this Loc
 	 */
 	public String toString()
 	{

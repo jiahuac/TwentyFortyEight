@@ -6,90 +6,86 @@ import java.awt.image.*;
 import javax.imageio.*;
 
 /**
- * GameScreen class for 3D-2048 game
- * Graphics and drawing for 2048 game
- *
- * @author Jiahua Chen
- * @version Final-1.1 06.02.2019 8:00pm
- *
- * COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved.
- */
+ GameScreen class for 3D-2048 game
+ Graphics and drawing for 2048 game
+ @author Jiahua Chen
+ @version Final-1.2 06.03.2019 8:00pm
+ 
+ COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved. */
 
 public class GameScreen extends JPanel
 {
 	
-	/**
-	 * GameApp and Grid objects
-	 */
+	/** GameApp objects */
 	private GameApp myApp;
+	
+	/** game grid object */
 	private Grid myGrid;
 	
-	/**
-	 * Reminder Button for tooltip
-	 */
+	/** Reminder Button for tooltip */
 	private ImageButton remindButton;
+	
+	/** mouse hovering over reminder button */
 	private boolean remindHover;
 	
-	/**
-	 * Pause Button
-	 */
+	/** Pause Button */
 	private ImageButton pauseButton;
+	
+	/** mouse hovering over pause button */
 	private boolean pauseHover;
 	
-	/**
-	 * Score Button/Hover Tooltup
-	 */
+	/** Score Button/Hover tooltip */
 	private ImageButton scoreButton;
+	
+	/** mouse hovering over score button */
 	private boolean scoreHover;
+	
+	/** show text to prompt user to hover (first time true) */
 	private boolean hoverTooltip = true;
 	
-	/**
-	 * Background for WIN screen
-	 */
+	/** Background for WIN screen */
 	private BufferedImage winBackground;
+	
+	/** display win screen */
 	private boolean winScreen = true;
 	
-	/**
-	 * Button to continue playing after win
-	 */
+	/** Button to continue playing after win */
 	private ImageButton winContinueButton;
+	
+	/** mouse hovering over continue after winning button */
 	private boolean winContinueHover;
 	
-	/**
-	 * Button for menu after win
-	 */
+	/** Button for menu after win */
 	private ImageButton winMenuButton;
+	
+	/** mouse hovering over menu after winning button */
 	private boolean winMenuHover;
 	
-	/**
-	 * Background for LOSE screen
-	 */
+	/** Background for LOSE screen */
 	private BufferedImage loseBackground;
 	
-	/**
-	 * Button for menu after lose
-	 */
+	/** Button for menu after lose */
 	private ImageButton loseMenuButton;
+	
+	/** mouse hovering over lose menu button */
 	private boolean loseMenuHover;
 	
-	/**
-	 * Game background, and tooltip views
-	 */
+	/** Game background, and tooltip views */
 	private static BufferedImage myBackground;
+	
+	/** control tooltip image */
 	private static BufferedImage myTooltip;
+	
+	/** score tooltip image */
 	private static BufferedImage myScoreTooltip;
 	
-	/**
-	 * Tile Color
-	 */
+	/** tile color */
 	private static final Color TILE_GREY = new Color(119, 110, 101);
 	
-	
 	/**
-	 * GameScreen Constructor
-	 *
-	 * @param grid Grid of the game
-	 * @param app  GameApp of the Game (for changing screens)
+	 GameScreen Constructor
+	 @param grid Grid of the game
+	 @param app GameApp of the Game (for changing screens)
 	 */
 	public GameScreen(Grid grid, GameApp app)
 	{
@@ -144,9 +140,8 @@ public class GameScreen extends JPanel
 	}
 	
 	/**
-	 * Paints the screen
-	 *
-	 * @param g Graphics object
+	 Paints the screen
+	 @param g Graphics object
 	 */
 	public void paintComponent(Graphics g)
 	{
@@ -194,7 +189,7 @@ public class GameScreen extends JPanel
 		
 		if (winScreen && myGrid.hasWon())
 		{
-			g2.drawImage(winBackground, - 1, 0, GameApp.WIDTH,
+			g2.drawImage(winBackground, -1, 0, GameApp.WIDTH,
 					GameApp.HEIGHT - 20,
 					null);
 			winContinueButton.draw(g2, winContinueHover);
@@ -203,7 +198,7 @@ public class GameScreen extends JPanel
 		
 		if (myGrid.gridLocked())
 		{
-			g2.drawImage(loseBackground, - 1, 0, GameApp.WIDTH,
+			g2.drawImage(loseBackground, -1, 0, GameApp.WIDTH,
 					GameApp.HEIGHT - 20,
 					null);
 			loseMenuButton.draw(g2, loseMenuHover);
@@ -211,15 +206,21 @@ public class GameScreen extends JPanel
 	}
 	
 	/**
-	 * Resets the win status, for starting new game after win.
+	 Resets the win status, for starting new game after win.
 	 */
 	public void resetWin()
 	{
 		winScreen = true;
 	}
 	
+	/**
+	 FieldUpdater updating the screen every frame.
+	 */
 	private class FieldUpdater extends Thread
 	{
+		/**
+		 Runs the FieldUpdater Thread
+		 */
 		public void run()
 		{
 			while (true)
@@ -237,12 +238,23 @@ public class GameScreen extends JPanel
 		}
 	}
 	
+	/**
+	 Listens for mouse hovering over buttons.
+	 */
 	private class MyHoverListener implements MouseMotionListener
 	{
+		/**
+		 Does nothing when mouse is dragged
+		 @param e MouseEvent
+		 */
 		public void mouseDragged(MouseEvent e)
 		{
 		}
 		
+		/**
+		 Actions when mouse if moved, checks if mouse is in the buttons
+		 @param e MouseEvent
+		 */
 		public void mouseMoved(MouseEvent e)
 		{
 			if (winScreen && myGrid.hasWon())
@@ -305,7 +317,7 @@ public class GameScreen extends JPanel
 	}
 	
 	/**
-	 * Resets the Hovering status, so no buttons are highlighted
+	 Resets the Hovering status, so no buttons are highlighted
 	 */
 	public void resetHover()
 	{
@@ -314,8 +326,15 @@ public class GameScreen extends JPanel
 		scoreHover = false;
 	}
 	
+	/**
+	 Listens for mouse clicking on buttons
+	 */
 	private class MyButtonListener implements MouseListener
 	{
+		/**
+		 Checks for when mouse is pressed, changes screen when it is.
+		 @param e MouseEvent
+		 */
 		public void mousePressed(MouseEvent e)
 		{
 			if (winScreen && myGrid.hasWon())
@@ -349,21 +368,37 @@ public class GameScreen extends JPanel
 			}
 		}
 		
+		/**
+		 Does nothing when mouse is released
+		 @param e MouseEvent
+		 */
 		public void mouseReleased(MouseEvent e)
 		{
 		
 		}
 		
+		/**
+		 Does nothing when mouse is clicked (not pressed)
+		 @param e MouseEvent
+		 */
 		public void mouseClicked(MouseEvent e)
 		{
 		
 		}
 		
+		/**
+		 Does nothing when mouse enters screen
+		 @param e MouseEvent
+		 */
 		public void mouseEntered(MouseEvent e)
 		{
 		
 		}
 		
+		/**
+		 Does nothing when mouse exits screen
+		 @param e MouseEvent
+		 */
 		public void mouseExited(MouseEvent e)
 		{
 		

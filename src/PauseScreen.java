@@ -6,38 +6,35 @@ import java.awt.image.*;
 import javax.imageio.*;
 
 /**
- * Paused Screen class for 3D-2048 game
- * Paused screen for 2048 game
- *
- * @author Jiahua Chen
- * @version Final-1.1 06.02.2019 8:00pm
- *
- * COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved.
- */
+ Paused Screen class for 3D-2048 game
+ Paused screen for 2048 game
+ @author Jiahua Chen
+ @version Final-1.2 06.03.2019 12:00pm
+ 
+ COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved. */
 public class PauseScreen extends JPanel
 {
-	/**
-	 * Background image of PauseScreen
-	 */
+	/** Background image of PauseScreen */
 	private static BufferedImage myBackground;
 	
-	/**
-	 * GameApp
-	 */
+	/** GameApp of the game */
 	private GameApp myApp;
 	
-	/**
-	 * Buttons for menu
-	 */
+	/** resume button */
 	private ImageButton resumeButton;
+	
+	/** mouse hovering over resume button */
 	private boolean resumeHover;
+	
+	/** reset button */
 	private ImageButton resetButton;
+	
+	/** mouse hovering over reset button */
 	private boolean resetHover;
 	
 	/**
-	 * Constructor for PauseScreen
-	 *
-	 * @param app GameApp passed down from App class
+	 Constructor for PauseScreen
+	 @param app GameApp passed down from App class
 	 */
 	public PauseScreen(GameApp app)
 	{
@@ -64,9 +61,8 @@ public class PauseScreen extends JPanel
 	}
 	
 	/**
-	 * Paints the PauseScreen
-	 *
-	 * @param g graphics obj
+	 Paints the PauseScreen
+	 @param g graphics obj
 	 */
 	public void paintComponent(Graphics g)
 	{
@@ -79,12 +75,23 @@ public class PauseScreen extends JPanel
 		resumeButton.draw(g2, resumeHover);
 	}
 	
+	/**
+	 Listens for mouse hovering over buttons.
+	 */
 	private class MyHoverListener implements MouseMotionListener
 	{
+		/**
+		 Does nothing when mouse is dragged
+		 @param e MouseEvent
+		 */
 		public void mouseDragged(MouseEvent e)
 		{
 		}
 		
+		/**
+		 Actions when mouse if moved, checks if mouse is in the buttons
+		 @param e MouseEvent
+		 */
 		public void mouseMoved(MouseEvent e)
 		{
 			
@@ -108,14 +115,24 @@ public class PauseScreen extends JPanel
 		}
 	}
 	
+	/**
+	 resets the hovering status of both buttons
+	 */
 	private void resetHover()
 	{
 		resetHover = false;
 		resumeHover = false;
 	}
 	
+	/**
+	 Listens for mouse clicking on buttons
+	 */
 	private class MyButtonListener implements MouseListener
 	{
+		/**
+		 Checks for when mouse is pressed, changes screen when it is.
+		 @param e MouseEvent
+		 */
 		public void mousePressed(MouseEvent e)
 		{
 			if (resumeButton.doesContain(e))
@@ -130,21 +147,37 @@ public class PauseScreen extends JPanel
 			}
 		}
 		
+		/**
+		 Does nothing when mouse is released
+		 @param e MouseEvent
+		 */
 		public void mouseReleased(MouseEvent e)
 		{
 		
 		}
 		
+		/**
+		 Does nothing when mouse is clicked (not pressed)
+		 @param e MouseEvent
+		 */
 		public void mouseClicked(MouseEvent e)
 		{
 		
 		}
 		
+		/**
+		 Does nothing when mouse enters screen
+		 @param e MouseEvent
+		 */
 		public void mouseEntered(MouseEvent e)
 		{
 		
 		}
 		
+		/**
+		 Does nothing when mouse exits screen
+		 @param e MouseEvent
+		 */
 		public void mouseExited(MouseEvent e)
 		{
 		

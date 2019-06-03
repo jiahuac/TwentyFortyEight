@@ -1,23 +1,20 @@
 import java.awt.event.*;
 
 /**
- * KeyHandler class for 3D-2048 game
- * KeyHandler for the GameScreen and InstructionScreen (it's used twice so it's a separate class)
- *
- * @author Jiahua Chen
- * @version Final-1.1 06.02.2019 8:00pm
- *
- * COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved.
- */
+ KeyHandler class for 3D-2048 game
+ KeyHandler for the GameScreen and InstructionScreen (it's used twice so it's a separate class)
+ @author Jiahua Chen
+ @version Final-1.2 06.03.2019 12:00pm
+ 
+ COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved. */
 public class GameKeyHandler implements KeyListener
 {
-	/* Game Grid */
+	/** Game Grid */
 	private Grid myGrid;
 	
 	/**
-	 * GameKeyHandler Constructor
-	 *
-	 * @param grid   grid obj of the game
+	 GameKeyHandler Constructor
+	 @param grid grid obj of the game
 	 */
 	public GameKeyHandler(Grid grid)
 	{
@@ -25,9 +22,8 @@ public class GameKeyHandler implements KeyListener
 	}
 	
 	/**
-	 * Actions on keypress
-	 *
-	 * @param e KeyEvent
+	 Actions on keypress
+	 @param e KeyEvent
 	 */
 	public void keyPressed(KeyEvent e)
 	{
@@ -61,10 +57,9 @@ public class GameKeyHandler implements KeyListener
 	}
 	
 	/**
-	 * actions on key release
-	 * does nothing
-	 *
-	 * @param e KeyEvent
+	 actions on key release
+	 does nothing
+	 @param e KeyEvent
 	 */
 	public void keyReleased(KeyEvent e)
 	{
@@ -72,10 +67,9 @@ public class GameKeyHandler implements KeyListener
 	}
 	
 	/**
-	 * actions on key typed
-	 * does nothing
-	 *
-	 * @param e KeyEvent
+	 actions on key typed
+	 does nothing
+	 @param e KeyEvent
 	 */
 	public void keyTyped(KeyEvent e)
 	{
