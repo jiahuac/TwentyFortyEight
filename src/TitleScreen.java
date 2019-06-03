@@ -11,6 +11,8 @@ import javax.imageio.*;
  *
  * @author Jiahua Chen
  * @version Final-1.0 06.02.2019 2:00pm
+ *
+ * COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved.
  */
 public class TitleScreen extends JPanel
 {
@@ -96,7 +98,6 @@ public class TitleScreen extends JPanel
 		
 		public void mouseMoved(MouseEvent e)
 		{
-			
 			if (playButton.doesContain(e))
 			{
 				playButtonHover = true;
@@ -133,7 +134,6 @@ public class TitleScreen extends JPanel
 			if (playButton.doesContain(e))
 			{
 				myApp.loadGameScreen();
-				resetHover();
 			}
 			else if (instructionsButton.doesContain(e))
 			{
