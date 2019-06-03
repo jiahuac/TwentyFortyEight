@@ -2,57 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c151ab6-0c12-4f72-9891-9aebe9b92ff1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphics_source/2048 Instructions Screen.psd" beforeDir="false" afterPath="$PROJECT_DIR$/graphics_source/2048 Instructions Screen.psd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphics_source/2048 Title Screen.psd" beforeDir="false" afterPath="$PROJECT_DIR$/graphics_source/2048 Title Screen.psd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameKeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameKeyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ImageButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ImageButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InstructionScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InstructionScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Loc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Loc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Move.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PauseScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PauseScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TitleScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TitleScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/GameApp.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/GameApp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/GameKeyHandler.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/GameKeyHandler.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/GameScreen.FieldUpdater.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/GameScreen.FieldUpdater.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/GameScreen.MyButtonListener.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/GameScreen.MyButtonListener.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/GameScreen.MyHoverListener.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/GameScreen.MyHoverListener.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/GameScreen.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/GameScreen.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/Grid.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/Grid.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/InstructionScreen.FieldUpdater.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/InstructionScreen.FieldUpdater.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/InstructionScreen.MyButtonListener.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/InstructionScreen.MyButtonListener.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/InstructionScreen.MyHoverListener.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/InstructionScreen.MyHoverListener.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/InstructionScreen.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/InstructionScreen.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/Loc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/Loc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/Move.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/Move.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/PauseScreen.MyButtonListener.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/PauseScreen.MyButtonListener.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/PauseScreen.MyHoverListener.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/PauseScreen.MyHoverListener.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/PauseScreen.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/PauseScreen.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/Tile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/Tile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/TitleScreen.MyButtonListener.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/TitleScreen.MyButtonListener.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/TitleScreen.MyHoverListener.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/TitleScreen.MyHoverListener.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/TitleScreen.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/TitleScreen.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/allclasses-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/allclasses.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/allclasses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/allpackages-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/constant-values.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/deprecated-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/help-doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/member-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/member-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/member-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/package-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/package-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/serialized-form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/type-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyFortyEight_doc/type-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwentyFortyEight_doc/type-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/insScreen.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/insScreen.png" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,10 +20,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Tile.java">
+        <entry file="file://$PROJECT_DIR$/src/TitleScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2297">
-              <caret line="180" column="7" lean-forward="true" selection-start-line="180" selection-start-column="7" selection-end-line="180" selection-end-column="7" />
+            <state relative-caret-position="195">
+              <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -134,8 +84,8 @@
         <option value="$PROJECT_DIR$/src/Loc.java" />
         <option value="$PROJECT_DIR$/src/Move.java" />
         <option value="$PROJECT_DIR$/src/PauseScreen.java" />
-        <option value="$PROJECT_DIR$/src/TitleScreen.java" />
         <option value="$PROJECT_DIR$/src/Tile.java" />
+        <option value="$PROJECT_DIR$/src/TitleScreen.java" />
       </list>
     </option>
   </component>
@@ -150,7 +100,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -167,6 +116,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -263,16 +213,18 @@
       <workItem from="1559518003747" duration="17000" />
       <workItem from="1559518022136" duration="2033000" />
       <workItem from="1559520392203" duration="1480000" />
+      <workItem from="1559522573281" duration="24000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53762000" />
+    <option name="totallyTimeSpent" value="53786000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="45" y="23" width="1635" height="1027" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26804772" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27118644" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -482,16 +434,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TitleScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="55" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/PauseScreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -548,8 +490,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Tile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2297">
-          <caret line="180" column="7" lean-forward="true" selection-start-line="180" selection-start-column="7" selection-end-line="180" selection-end-column="7" />
+        <state relative-caret-position="855">
+          <caret line="180" column="7" selection-start-line="180" selection-start-column="7" selection-end-line="180" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TitleScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
