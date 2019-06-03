@@ -7,6 +7,8 @@ import javax.swing.*;
  *
  * @author Jiahua Chen
  * @version Final-1.0 06.02.2019 2:00pm
+ *
+ * COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved.
  */
 public class GameApp
 {
@@ -24,15 +26,10 @@ public class GameApp
 	/**
 	 * the window of the app
 	 */
-	private JFrame myWindow;
-	
-	/**
-	 * the window of the app
-	 */
 	private JPanel myPanel;
 	
 	/**
-	 * Names of the screens
+	 * Names of the title screen
 	 */
 	private static final String TITLE = "Title";
 	private static final String GAME = "Game";
@@ -69,6 +66,7 @@ public class GameApp
 	 */
 	public void run()
 	{
+		JFrame myWindow;
 		myWindow = new JFrame();
 		myWindow.setResizable(false);
 		
