@@ -3,7 +3,7 @@
  * Basic data-structure of locations/coordinates
  *
  * @author Jiahua Chen
- * @version Final-1.0 06.02.2019 2:00pm
+ * @version Final-1.1 06.02.2019 8:00pm
  *
  * COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved.
  */
