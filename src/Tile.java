@@ -10,6 +10,8 @@ import javax.imageio.*;
  *
  * @author Jiahua Chen
  * @version Final-1.0 06.02.2019 2:00pm
+ *
+ * COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved.
  */
 
 public class Tile
@@ -196,8 +198,8 @@ public class Tile
 		if (this.isEmpty())
 		{
 			this.setPower((int) (1 + Math.random() * 2));
-			/** To test the win screen: */
-//            this.setPower(10);
+			/* To test the win screen: */
+			// this.setPower(10);
 			return this.getPower();
 		}
 		else
@@ -293,7 +295,7 @@ public class Tile
 	 * @param x X coord on screen to draw
 	 * @param y Y coord on screen to draw
 	 */
-	public void drawTile(Graphics2D g, int x, int y)
+	private void drawTile(Graphics2D g, int x, int y)
 	{
 		if (!isEmpty())
 		{
@@ -317,7 +319,8 @@ public class Tile
 		source:
 		https://stackoverflow.com/questions/7603400/how-to-make-a-rounded-corner-image-in-java
 	 */
-	public static BufferedImage makeRoundedCorner(BufferedImage image, int cornerRadius)
+	private static BufferedImage makeRoundedCorner(BufferedImage image,
+	                                         int cornerRadius)
 	{
 		int w = image.getWidth();
 		int h = image.getHeight();
