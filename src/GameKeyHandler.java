@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.awt.event.*;
 
 /**
@@ -7,6 +6,8 @@ import java.awt.event.*;
  *
  * @author Jiahua Chen
  * @version Final-1.0 06.02.2019 2:00pm
+ *
+ * COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved.
  */
 public class GameKeyHandler implements KeyListener
 {
@@ -17,9 +18,8 @@ public class GameKeyHandler implements KeyListener
 	 * GameKeyHandler Constructor
 	 *
 	 * @param grid   grid obj of the game
-	 * @param screen screen obj of the game
 	 */
-	public GameKeyHandler(Grid grid, JPanel screen)
+	public GameKeyHandler(Grid grid)
 	{
 		this.myGrid = grid;
 	}
@@ -56,11 +56,8 @@ public class GameKeyHandler implements KeyListener
 		{
 			myGrid.doMove(Move.BACKWARD);
 		}
-		else
-		{
-		}
 		this.myGrid.resetLoc();
-		// System.out.println(myGrid); // Suppressed output of grid in console. 
+		// System.out.println(myGrid); // Suppressed output of grid in console.
 	}
 	
 	/**
