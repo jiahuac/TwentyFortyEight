@@ -133,6 +133,7 @@ public class TitleScreen extends JPanel
 		{
 			if (playButton.doesContain(e))
 			{
+         	System.out.println("Loading Game...");
 				myApp.loadGameScreen();
 			}
 			else if (instructionsButton.doesContain(e))
