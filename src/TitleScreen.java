@@ -11,7 +11,7 @@ import javax.imageio.*;
  *
  * @author Jiahua Chen
  * @version Final-1.1 06.02.2019 8:00pm
- * 
+ *
  * COPYRIGHT (C) 2019 Jiahua Chen. All Rights Reserved.
  */
 public class TitleScreen extends JPanel
